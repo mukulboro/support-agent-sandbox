@@ -1,0 +1,111 @@
+{
+  "GET /vendors": {
+    "message": "Success",
+    "data": [
+      {
+        "vendor_id": "ven-6201",
+        "name": "Halberd Components Ltd",
+        "email": "ap@halberd-components.example",
+        "status": "ACTIVE",
+        "default_currency": "USD",
+        "payment_method": "ACH",
+        "payment_terms_days": 30,
+        "address": {
+          "city": "Sheffield",
+          "country_iso2": "GB"
+        }
+      },
+      {
+        "vendor_id": "ven-6202",
+        "name": "Orrery Cloud Services",
+        "email": "billing@orrery.example",
+        "status": "ACTIVE",
+        "default_currency": "USD",
+        "payment_method": "WIRE",
+        "payment_terms_days": 15,
+        "address": {
+          "city": "Dublin",
+          "country_iso2": "IE"
+        }
+      },
+      {
+        "vendor_id": "ven-6203",
+        "name": "Kestrel Freight",
+        "email": "invoices@kestrel-freight.example",
+        "status": "ACTIVE",
+        "default_currency": "USD",
+        "payment_method": "ACH",
+        "payment_terms_days": 45,
+        "address": {
+          "city": "Newark",
+          "country_iso2": "US"
+        }
+      },
+      {
+        "vendor_id": "ven-6204",
+        "name": "Pallas Metalworks",
+        "email": "accounts@pallas-metal.example",
+        "status": "ACTIVE",
+        "default_currency": "USD",
+        "payment_method": "ACH",
+        "payment_terms_days": 30,
+        "address": {
+          "city": "Cleveland",
+          "country_iso2": "US"
+        }
+      },
+      {
+        "vendor_id": "ven-6205",
+        "name": "Juniper Office Supply",
+        "email": "ar@juniper-office.example",
+        "status": "ACTIVE",
+        "default_currency": "USD",
+        "payment_method": "ACH",
+        "payment_terms_days": 30,
+        "address": {
+          "city": "Austin",
+          "country_iso2": "US"
+        }
+      },
+      {
+        "vendor_id": "ven-6206",
+        "name": "Vantage Legal LLP",
+        "email": "billing@vantagelegal.example",
+        "status": "ACTIVE",
+        "default_currency": "USD",
+        "payment_method": "WIRE",
+        "payment_terms_days": 30,
+        "address": {
+          "city": "New York",
+          "country_iso2": "US"
+        }
+      },
+      {
+        "vendor_id": "ven-6207",
+        "name": "Sable Facilities",
+        "email": "invoices@sablefacilities.example",
+        "status": "ACTIVE",
+        "default_currency": "USD",
+        "payment_method": "ACH",
+        "payment_terms_days": 30,
+        "address": {
+          "city": "Brooklyn",
+          "country_iso2": "US"
+        }
+      },
+      {
+        "vendor_id": "ven-6208",
+        "name": "Thicket Design Studio",
+        "email": "hello@thicketdesign.example",
+        "status": "ACTIVE",
+        "default_currency": "USD",
+        "payment_method": "ACH",
+        "payment_terms_days": 14,
+        "address": {
+          "city": "Lisbon",
+          "country_iso2": "PT"
+        }
+      }
+    ]
+  }
+}

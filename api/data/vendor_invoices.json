@@ -1,0 +1,1130 @@
+{
+  "GET /vendor-invoices": {
+    "message": "Success",
+    "data": [
+      {
+        "invoice_id": "vinv-2041",
+        "invoice_number": "INV-2041",
+        "vendor_id": "ven-6201",
+        "vendor_name": "Halberd Components Ltd",
+        "amount": 8400.0,
+        "currency": "USD",
+        "status": "PENDING_APPROVAL",
+        "issue_date": "2026-09-05",
+        "due_date": "2026-10-05",
+        "paid_date": null
+      },
+      {
+        "invoice_id": "vinv-2042",
+        "invoice_number": "INV-2042",
+        "vendor_id": "ven-6202",
+        "vendor_name": "Orrery Cloud Services",
+        "amount": 1250.0,
+        "currency": "USD",
+        "status": "OVERDUE",
+        "issue_date": "2026-08-10",
+        "due_date": "2026-08-25",
+        "paid_date": null
+      },
+      {
+        "invoice_id": "vinv-2043",
+        "invoice_number": "INV-2043",
+        "vendor_id": "ven-6202",
+        "vendor_name": "Orrery Cloud Services",
+        "amount": 1250.0,
+        "currency": "USD",
+        "status": "OVERDUE",
+        "issue_date": "2026-09-01",
+        "due_date": "2026-09-16",
+        "paid_date": null
+      },
+      {
+        "invoice_id": "vinv-2044",
+        "invoice_number": "INV-2044",
+        "vendor_id": "ven-6202",
+        "vendor_name": "Orrery Cloud Services",
+        "amount": 980.0,
+        "currency": "USD",
+        "status": "PENDING_APPROVAL",
+        "issue_date": "2026-09-20",
+        "due_date": "2026-10-05",
+        "paid_date": null
+      },
+      {
+        "invoice_id": "vinv-2045",
+        "invoice_number": "INV-2045",
+        "vendor_id": "ven-6203",
+        "vendor_name": "Kestrel Freight",
+        "amount": 3120.0,
+        "currency": "USD",
+        "status": "OVERDUE",
+        "issue_date": "2026-07-30",
+        "due_date": "2026-09-13",
+        "paid_date": null
+      },
+      {
+        "invoice_id": "vinv-2046",
+        "invoice_number": "INV-2046",
+        "vendor_id": "ven-6204",
+        "vendor_name": "Pallas Metalworks",
+        "amount": 15600.0,
+        "currency": "USD",
+        "status": "PAID",
+        "issue_date": "2026-08-01",
+        "due_date": "2026-08-31",
+        "paid_date": "2026-08-28"
+      },
+      {
+        "invoice_id": "vinv-2047",
+        "invoice_number": "INV-2047",
+        "vendor_id": "ven-6205",
+        "vendor_name": "Juniper Office Supply",
+        "amount": 410.55,
+        "currency": "USD",
+        "status": "PAID",
+        "issue_date": "2026-08-05",
+        "due_date": "2026-09-04",
+        "paid_date": "2026-09-02"
+      },
+      {
+        "invoice_id": "vinv-2048",
+        "invoice_number": "INV-2048",
+        "vendor_id": "ven-6206",
+        "vendor_name": "Vantage Legal LLP",
+        "amount": 22000.0,
+        "currency": "USD",
+        "status": "PENDING_APPROVAL",
+        "issue_date": "2026-09-18",
+        "due_date": "2026-10-18",
+        "paid_date": null
+      },
+      {
+        "invoice_id": "vinv-2049",
+        "invoice_number": "INV-2049",
+        "vendor_id": "ven-6207",
+        "vendor_name": "Sable Facilities",
+        "amount": 2750.0,
+        "currency": "USD",
+        "status": "PAID",
+        "issue_date": "2026-08-12",
+        "due_date": "2026-09-11",
+        "paid_date": "2026-09-09"
+      },
+      {
+        "invoice_id": "vinv-2050",
+        "invoice_number": "INV-2050",
+        "vendor_id": "ven-6208",
+        "vendor_name": "Thicket Design Studio",
+        "amount": 6400.0,
+        "currency": "USD",
+        "status": "SCHEDULED",
+        "issue_date": "2026-09-22",
+        "due_date": "2026-10-06",
+        "paid_date": null
+      },
+      {
+        "invoice_id": "vinv-2051",
+        "invoice_number": "INV-2051",
+        "vendor_id": "ven-6201",
+        "vendor_name": "Halberd Components Ltd",
+        "amount": 7900.0,
+        "currency": "USD",
+        "status": "PAID",
+        "issue_date": "2026-07-06",
+        "due_date": "2026-08-05",
+        "paid_date": "2026-08-01"
+      },
+      {
+        "invoice_id": "vinv-2052",
+        "invoice_number": "INV-2052",
+        "vendor_id": "ven-6204",
+        "vendor_name": "Pallas Metalworks",
+        "amount": 14250.0,
+        "currency": "USD",
+        "status": "PAID",
+        "issue_date": "2026-07-01",
+        "due_date": "2026-07-31",
+        "paid_date": "2026-07-30"
+      },
+      {
+        "invoice_id": "vinv-2053",
+        "invoice_number": "INV-2053",
+        "vendor_id": "ven-6205",
+        "vendor_name": "Juniper Office Supply",
+        "amount": 388.2,
+        "currency": "USD",
+        "status": "PAID",
+        "issue_date": "2026-07-05",
+        "due_date": "2026-08-04",
+        "paid_date": "2026-08-03"
+      },
+      {
+        "invoice_id": "vinv-2054",
+        "invoice_number": "INV-2054",
+        "vendor_id": "ven-6203",
+        "vendor_name": "Kestrel Freight",
+        "amount": 2980.0,
+        "currency": "USD",
+        "status": "PAID",
+        "issue_date": "2026-06-28",
+        "due_date": "2026-08-12",
+        "paid_date": "2026-08-10"
+      },
+      {
+        "invoice_id": "vinv-2055",
+        "invoice_number": "INV-2055",
+        "vendor_id": "ven-6207",
+        "vendor_name": "Sable Facilities",
+        "amount": 2750.0,
+        "currency": "USD",
+        "status": "OVERDUE",
+        "issue_date": "2026-08-12",
+        "due_date": "2026-09-11",
+        "paid_date": null
+      },
+      {
+        "invoice_id": "vinv-2056",
+        "invoice_number": "INV-2056",
+        "vendor_id": "ven-6206",
+        "vendor_name": "Vantage Legal LLP",
+        "amount": 18500.0,
+        "currency": "USD",
+        "status": "PAID",
+        "issue_date": "2026-06-15",
+        "due_date": "2026-07-15",
+        "paid_date": "2026-07-14"
+      },
+      {
+        "invoice_id": "vinv-2057",
+        "invoice_number": "INV-2057",
+        "vendor_id": "ven-6208",
+        "vendor_name": "Thicket Design Studio",
+        "amount": 5900.0,
+        "currency": "USD",
+        "status": "PAID",
+        "issue_date": "2026-06-20",
+        "due_date": "2026-07-04",
+        "paid_date": "2026-07-02"
+      },
+      {
+        "invoice_id": "vinv-2058",
+        "invoice_number": "INV-2058",
+        "vendor_id": "ven-6201",
+        "vendor_name": "Halberd Components Ltd",
+        "amount": 8100.0,
+        "currency": "USD",
+        "status": "PAID",
+        "issue_date": "2026-05-08",
+        "due_date": "2026-06-07",
+        "paid_date": "2026-06-05"
+      },
+      {
+        "invoice_id": "vinv-2059",
+        "invoice_number": "INV-2059",
+        "vendor_id": "ven-6204",
+        "vendor_name": "Pallas Metalworks",
+        "amount": 9400.0,
+        "currency": "USD",
+        "status": "OVERDUE",
+        "issue_date": "2026-08-18",
+        "due_date": "2026-09-17",
+        "paid_date": null
+      },
+      {
+        "invoice_id": "vinv-2060",
+        "invoice_number": "INV-2060",
+        "vendor_id": "ven-6205",
+        "vendor_name": "Juniper Office Supply",
+        "amount": 522.4,
+        "currency": "USD",
+        "status": "SCHEDULED",
+        "issue_date": "2026-09-24",
+        "due_date": "2026-10-24",
+        "paid_date": null
+      },
+      {
+        "invoice_id": "vinv-2061",
+        "invoice_number": "INV-2061",
+        "vendor_id": "ven-6203",
+        "vendor_name": "Kestrel Freight",
+        "amount": 3410.0,
+        "currency": "USD",
+        "status": "PAID",
+        "issue_date": "2026-05-30",
+        "due_date": "2026-07-14",
+        "paid_date": "2026-07-11"
+      },
+      {
+        "invoice_id": "vinv-2062",
+        "invoice_number": "INV-2062",
+        "vendor_id": "ven-6206",
+        "vendor_name": "Vantage Legal LLP",
+        "amount": 16750.0,
+        "currency": "USD",
+        "status": "PAID",
+        "issue_date": "2026-05-12",
+        "due_date": "2026-06-11",
+        "paid_date": "2026-06-10"
+      },
+      {
+        "invoice_id": "vinv-2063",
+        "invoice_number": "INV-2063",
+        "vendor_id": "ven-6207",
+        "vendor_name": "Sable Facilities",
+        "amount": 2750.0,
+        "currency": "USD",
+        "status": "PAID",
+        "issue_date": "2026-07-12",
+        "due_date": "2026-08-11",
+        "paid_date": "2026-08-08"
+      },
+      {
+        "invoice_id": "vinv-2064",
+        "invoice_number": "INV-2064",
+        "vendor_id": "ven-6208",
+        "vendor_name": "Thicket Design Studio",
+        "amount": 4300.0,
+        "currency": "USD",
+        "status": "SCHEDULED",
+        "issue_date": "2026-09-26",
+        "due_date": "2026-10-10",
+        "paid_date": null
+      },
+      {
+        "invoice_id": "vinv-2065",
+        "invoice_number": "INV-2065",
+        "vendor_id": "ven-6202",
+        "vendor_name": "Orrery Cloud Services",
+        "amount": 1250.0,
+        "currency": "USD",
+        "status": "PAID",
+        "issue_date": "2026-07-01",
+        "due_date": "2026-07-16",
+        "paid_date": "2026-07-15"
+      }
+    ]
+  },
+  "GET /vendor-invoices/{invoice_id}": {
+    "_note": "Keyed by invoice_id. A mock server returns the matching object.",
+    "_records": {
+      "vinv-2041": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2041",
+          "invoice_number": "INV-2041",
+          "vendor_id": "ven-6201",
+          "vendor_name": "Halberd Components Ltd",
+          "amount": 8400.0,
+          "currency": "USD",
+          "status": "PENDING_APPROVAL",
+          "issue_date": "2026-09-05",
+          "due_date": "2026-10-05",
+          "paid_date": null,
+          "line_items": [
+            {
+              "description": "Actuator housings (x120)",
+              "amount": 7200.0
+            },
+            {
+              "description": "Freight",
+              "amount": 1200.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Saoirse Kavanagh",
+              "role": "Payroll Specialist",
+              "status": "APPROVED",
+              "acted_date": "2026-09-06"
+            },
+            {
+              "step": 2,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "PENDING",
+              "acted_date": null
+            }
+          ],
+          "awaiting_approval_from": "Beatrix Nolan",
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2042": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2042",
+          "invoice_number": "INV-2042",
+          "vendor_id": "ven-6202",
+          "vendor_name": "Orrery Cloud Services",
+          "amount": 1250.0,
+          "currency": "USD",
+          "status": "OVERDUE",
+          "issue_date": "2026-08-10",
+          "due_date": "2026-08-25",
+          "paid_date": null,
+          "line_items": [
+            {
+              "description": "Hosting — August",
+              "amount": 1250.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-08-10"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 15
+        }
+      },
+      "vinv-2043": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2043",
+          "invoice_number": "INV-2043",
+          "vendor_id": "ven-6202",
+          "vendor_name": "Orrery Cloud Services",
+          "amount": 1250.0,
+          "currency": "USD",
+          "status": "OVERDUE",
+          "issue_date": "2026-09-01",
+          "due_date": "2026-09-16",
+          "paid_date": null,
+          "line_items": [
+            {
+              "description": "Hosting — September",
+              "amount": 1250.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-09-01"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 15
+        }
+      },
+      "vinv-2044": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2044",
+          "invoice_number": "INV-2044",
+          "vendor_id": "ven-6202",
+          "vendor_name": "Orrery Cloud Services",
+          "amount": 980.0,
+          "currency": "USD",
+          "status": "PENDING_APPROVAL",
+          "issue_date": "2026-09-20",
+          "due_date": "2026-10-05",
+          "paid_date": null,
+          "line_items": [
+            {
+              "description": "Additional storage tier",
+              "amount": 980.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Saoirse Kavanagh",
+              "role": "Payroll Specialist",
+              "status": "PENDING",
+              "acted_date": null
+            }
+          ],
+          "awaiting_approval_from": "Saoirse Kavanagh",
+          "payment_terms_days": 15
+        }
+      },
+      "vinv-2045": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2045",
+          "invoice_number": "INV-2045",
+          "vendor_id": "ven-6203",
+          "vendor_name": "Kestrel Freight",
+          "amount": 3120.0,
+          "currency": "USD",
+          "status": "OVERDUE",
+          "issue_date": "2026-07-30",
+          "due_date": "2026-09-13",
+          "paid_date": null,
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 3120.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-07-30"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 45
+        }
+      },
+      "vinv-2046": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2046",
+          "invoice_number": "INV-2046",
+          "vendor_id": "ven-6204",
+          "vendor_name": "Pallas Metalworks",
+          "amount": 15600.0,
+          "currency": "USD",
+          "status": "PAID",
+          "issue_date": "2026-08-01",
+          "due_date": "2026-08-31",
+          "paid_date": "2026-08-28",
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 15600.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-08-01"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2047": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2047",
+          "invoice_number": "INV-2047",
+          "vendor_id": "ven-6205",
+          "vendor_name": "Juniper Office Supply",
+          "amount": 410.55,
+          "currency": "USD",
+          "status": "PAID",
+          "issue_date": "2026-08-05",
+          "due_date": "2026-09-04",
+          "paid_date": "2026-09-02",
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 410.55
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-08-05"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2048": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2048",
+          "invoice_number": "INV-2048",
+          "vendor_id": "ven-6206",
+          "vendor_name": "Vantage Legal LLP",
+          "amount": 22000.0,
+          "currency": "USD",
+          "status": "PENDING_APPROVAL",
+          "issue_date": "2026-09-18",
+          "due_date": "2026-10-18",
+          "paid_date": null,
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 22000.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-09-19"
+            },
+            {
+              "step": 2,
+              "approver_name": "Rosalind Vane",
+              "role": "VP Engineering",
+              "status": "PENDING",
+              "acted_date": null
+            }
+          ],
+          "awaiting_approval_from": "Rosalind Vane",
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2049": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2049",
+          "invoice_number": "INV-2049",
+          "vendor_id": "ven-6207",
+          "vendor_name": "Sable Facilities",
+          "amount": 2750.0,
+          "currency": "USD",
+          "status": "PAID",
+          "issue_date": "2026-08-12",
+          "due_date": "2026-09-11",
+          "paid_date": "2026-09-09",
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 2750.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-08-12"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2050": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2050",
+          "invoice_number": "INV-2050",
+          "vendor_id": "ven-6208",
+          "vendor_name": "Thicket Design Studio",
+          "amount": 6400.0,
+          "currency": "USD",
+          "status": "SCHEDULED",
+          "issue_date": "2026-09-22",
+          "due_date": "2026-10-06",
+          "paid_date": null,
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 6400.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-09-22"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 14
+        }
+      },
+      "vinv-2051": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2051",
+          "invoice_number": "INV-2051",
+          "vendor_id": "ven-6201",
+          "vendor_name": "Halberd Components Ltd",
+          "amount": 7900.0,
+          "currency": "USD",
+          "status": "PAID",
+          "issue_date": "2026-07-06",
+          "due_date": "2026-08-05",
+          "paid_date": "2026-08-01",
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 7900.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-07-06"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2052": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2052",
+          "invoice_number": "INV-2052",
+          "vendor_id": "ven-6204",
+          "vendor_name": "Pallas Metalworks",
+          "amount": 14250.0,
+          "currency": "USD",
+          "status": "PAID",
+          "issue_date": "2026-07-01",
+          "due_date": "2026-07-31",
+          "paid_date": "2026-07-30",
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 14250.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-07-01"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2053": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2053",
+          "invoice_number": "INV-2053",
+          "vendor_id": "ven-6205",
+          "vendor_name": "Juniper Office Supply",
+          "amount": 388.2,
+          "currency": "USD",
+          "status": "PAID",
+          "issue_date": "2026-07-05",
+          "due_date": "2026-08-04",
+          "paid_date": "2026-08-03",
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 388.2
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-07-05"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2054": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2054",
+          "invoice_number": "INV-2054",
+          "vendor_id": "ven-6203",
+          "vendor_name": "Kestrel Freight",
+          "amount": 2980.0,
+          "currency": "USD",
+          "status": "PAID",
+          "issue_date": "2026-06-28",
+          "due_date": "2026-08-12",
+          "paid_date": "2026-08-10",
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 2980.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-06-28"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 45
+        }
+      },
+      "vinv-2055": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2055",
+          "invoice_number": "INV-2055",
+          "vendor_id": "ven-6207",
+          "vendor_name": "Sable Facilities",
+          "amount": 2750.0,
+          "currency": "USD",
+          "status": "OVERDUE",
+          "issue_date": "2026-08-12",
+          "due_date": "2026-09-11",
+          "paid_date": null,
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 2750.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-08-12"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2056": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2056",
+          "invoice_number": "INV-2056",
+          "vendor_id": "ven-6206",
+          "vendor_name": "Vantage Legal LLP",
+          "amount": 18500.0,
+          "currency": "USD",
+          "status": "PAID",
+          "issue_date": "2026-06-15",
+          "due_date": "2026-07-15",
+          "paid_date": "2026-07-14",
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 18500.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-06-15"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2057": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2057",
+          "invoice_number": "INV-2057",
+          "vendor_id": "ven-6208",
+          "vendor_name": "Thicket Design Studio",
+          "amount": 5900.0,
+          "currency": "USD",
+          "status": "PAID",
+          "issue_date": "2026-06-20",
+          "due_date": "2026-07-04",
+          "paid_date": "2026-07-02",
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 5900.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-06-20"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 14
+        }
+      },
+      "vinv-2058": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2058",
+          "invoice_number": "INV-2058",
+          "vendor_id": "ven-6201",
+          "vendor_name": "Halberd Components Ltd",
+          "amount": 8100.0,
+          "currency": "USD",
+          "status": "PAID",
+          "issue_date": "2026-05-08",
+          "due_date": "2026-06-07",
+          "paid_date": "2026-06-05",
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 8100.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-05-08"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2059": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2059",
+          "invoice_number": "INV-2059",
+          "vendor_id": "ven-6204",
+          "vendor_name": "Pallas Metalworks",
+          "amount": 9400.0,
+          "currency": "USD",
+          "status": "OVERDUE",
+          "issue_date": "2026-08-18",
+          "due_date": "2026-09-17",
+          "paid_date": null,
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 9400.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-08-18"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2060": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2060",
+          "invoice_number": "INV-2060",
+          "vendor_id": "ven-6205",
+          "vendor_name": "Juniper Office Supply",
+          "amount": 522.4,
+          "currency": "USD",
+          "status": "SCHEDULED",
+          "issue_date": "2026-09-24",
+          "due_date": "2026-10-24",
+          "paid_date": null,
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 522.4
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-09-24"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2061": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2061",
+          "invoice_number": "INV-2061",
+          "vendor_id": "ven-6203",
+          "vendor_name": "Kestrel Freight",
+          "amount": 3410.0,
+          "currency": "USD",
+          "status": "PAID",
+          "issue_date": "2026-05-30",
+          "due_date": "2026-07-14",
+          "paid_date": "2026-07-11",
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 3410.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-05-30"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 45
+        }
+      },
+      "vinv-2062": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2062",
+          "invoice_number": "INV-2062",
+          "vendor_id": "ven-6206",
+          "vendor_name": "Vantage Legal LLP",
+          "amount": 16750.0,
+          "currency": "USD",
+          "status": "PAID",
+          "issue_date": "2026-05-12",
+          "due_date": "2026-06-11",
+          "paid_date": "2026-06-10",
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 16750.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-05-12"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2063": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2063",
+          "invoice_number": "INV-2063",
+          "vendor_id": "ven-6207",
+          "vendor_name": "Sable Facilities",
+          "amount": 2750.0,
+          "currency": "USD",
+          "status": "PAID",
+          "issue_date": "2026-07-12",
+          "due_date": "2026-08-11",
+          "paid_date": "2026-08-08",
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 2750.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-07-12"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 30
+        }
+      },
+      "vinv-2064": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2064",
+          "invoice_number": "INV-2064",
+          "vendor_id": "ven-6208",
+          "vendor_name": "Thicket Design Studio",
+          "amount": 4300.0,
+          "currency": "USD",
+          "status": "SCHEDULED",
+          "issue_date": "2026-09-26",
+          "due_date": "2026-10-10",
+          "paid_date": null,
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 4300.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-09-26"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 14
+        }
+      },
+      "vinv-2065": {
+        "message": "Success",
+        "data": {
+          "invoice_id": "vinv-2065",
+          "invoice_number": "INV-2065",
+          "vendor_id": "ven-6202",
+          "vendor_name": "Orrery Cloud Services",
+          "amount": 1250.0,
+          "currency": "USD",
+          "status": "PAID",
+          "issue_date": "2026-07-01",
+          "due_date": "2026-07-16",
+          "paid_date": "2026-07-15",
+          "line_items": [
+            {
+              "description": "Services rendered",
+              "amount": 1250.0
+            }
+          ],
+          "approvals": [
+            {
+              "step": 1,
+              "approver_name": "Beatrix Nolan",
+              "role": "Controller",
+              "status": "APPROVED",
+              "acted_date": "2026-07-01"
+            }
+          ],
+          "awaiting_approval_from": null,
+          "payment_terms_days": 15
+        }
+      }
+    }
+  }
+}

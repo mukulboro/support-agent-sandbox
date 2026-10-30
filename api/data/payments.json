@@ -1,0 +1,81 @@
+{
+  "GET /transactions/{transaction_id}": {
+    "_note": "Keyed by transaction_id. A mock server returns the matching object.",
+    "_records": {
+      "txn-88401": {
+        "message": "Success",
+        "data": {
+          "transaction_id": "txn-88401",
+          "reference": "INV-2046",
+          "transaction_type": "ACH",
+          "amount": 15600.0,
+          "currency": "USD",
+          "status": "SETTLED",
+          "created_date": "2026-08-27T10:14:00Z",
+          "settlement_date": "2026-08-28",
+          "failure_reason": null,
+          "payment_method": {
+            "institution_name": "Meridian Trust Bank",
+            "account_last_4": "4417"
+          }
+        }
+      },
+      "txn-88402": {
+        "message": "Success",
+        "data": {
+          "transaction_id": "txn-88402",
+          "reference": "INV-2049",
+          "transaction_type": "ACH",
+          "amount": 2750.0,
+          "currency": "USD",
+          "status": "SETTLED",
+          "created_date": "2026-09-08T09:02:00Z",
+          "settlement_date": "2026-09-09",
+          "failure_reason": null,
+          "payment_method": {
+            "institution_name": "Meridian Trust Bank",
+            "account_last_4": "4417"
+          }
+        }
+      },
+      "txn-88403": {
+        "message": "Success",
+        "data": {
+          "transaction_id": "txn-88403",
+          "reference": "INV-2045",
+          "transaction_type": "ACH",
+          "amount": 3120.0,
+          "currency": "USD",
+          "status": "FAILED",
+          "created_date": "2026-09-12T14:31:00Z",
+          "settlement_date": null,
+          "failure_reason": "INSUFFICIENT_FUNDS",
+          "failure_detail": "The funding account did not have sufficient balance on the settlement date.",
+          "payment_method": {
+            "institution_name": "Meridian Trust Bank",
+            "account_last_4": "4417"
+          }
+        }
+      },
+      "txn-88404": {
+        "message": "Success",
+        "data": {
+          "transaction_id": "txn-88404",
+          "reference": "PAYROLL-2026-09-15",
+          "transaction_type": "ACH",
+          "amount": 48250.0,
+          "currency": "USD",
+          "status": "PENDING",
+          "created_date": "2026-09-26T16:45:00Z",
+          "settlement_date": null,
+          "expected_settlement_date": "2026-09-30",
+          "failure_reason": null,
+          "payment_method": {
+            "institution_name": "Meridian Trust Bank",
+            "account_last_4": "4417"
+          }
+        }
+      }
+    }
+  }
+}

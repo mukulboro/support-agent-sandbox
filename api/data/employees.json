@@ -1,0 +1,1715 @@
+{
+  "GET /employer/{employer_id}/employees": {
+    "message": "Success",
+    "data": [
+      {
+        "employee_id": "emp-03100",
+        "first_name": "Marisol",
+        "last_name": "Okonjo",
+        "work_email": "marisol.okonjo@bramblewood.example",
+        "job_title": "Senior Controls Engineer",
+        "department": "Engineering",
+        "employment_type": "EMPLOYEE",
+        "status": "PENDING_ONBOARDING",
+        "start_date": "2026-09-21",
+        "work_location": {
+          "city": "Brooklyn",
+          "state": "NY",
+          "country_iso2": "US"
+        },
+        "manager_name": "Rosalind Vane"
+      },
+      {
+        "employee_id": "emp-03107",
+        "first_name": "Teodor",
+        "last_name": "Lindqvist",
+        "work_email": "teodor.lindqvist@bramblewood.example",
+        "job_title": "Firmware Technician",
+        "department": "Engineering",
+        "employment_type": "EMPLOYEE",
+        "status": "ONBOARDED",
+        "start_date": "2025-03-10",
+        "work_location": {
+          "city": "Austin",
+          "state": "TX",
+          "country_iso2": "US"
+        },
+        "manager_name": "Rosalind Vane"
+      },
+      {
+        "employee_id": "emp-03114",
+        "first_name": "Priya",
+        "last_name": "Raghunathan",
+        "work_email": "priya.raghunathan@bramblewood.example",
+        "job_title": "Account Manager",
+        "department": "Sales",
+        "employment_type": "EMPLOYEE",
+        "status": "DISMISSED",
+        "start_date": "2024-01-15",
+        "work_location": {
+          "city": "Chicago",
+          "state": "IL",
+          "country_iso2": "US"
+        },
+        "manager_name": "Desmond Achebe"
+      },
+      {
+        "employee_id": "emp-03121",
+        "first_name": "Rosalind",
+        "last_name": "Vane",
+        "work_email": "rosalind.vane@bramblewood.example",
+        "job_title": "VP Engineering",
+        "department": "Engineering",
+        "employment_type": "EMPLOYEE",
+        "status": "ONBOARDED",
+        "start_date": "2023-02-01",
+        "work_location": {
+          "city": "New York",
+          "state": "NY",
+          "country_iso2": "US"
+        },
+        "manager_name": null
+      },
+      {
+        "employee_id": "emp-03128",
+        "first_name": "Desmond",
+        "last_name": "Achebe",
+        "work_email": "desmond.achebe@bramblewood.example",
+        "job_title": "Head of Sales",
+        "department": "Sales",
+        "employment_type": "EMPLOYEE",
+        "status": "ONBOARDED",
+        "start_date": "2023-05-22",
+        "work_location": {
+          "city": "New York",
+          "state": "NY",
+          "country_iso2": "US"
+        },
+        "manager_name": null
+      },
+      {
+        "employee_id": "emp-03135",
+        "first_name": "Ines",
+        "last_name": "Bramante",
+        "work_email": "ines.bramante@bramblewood.example",
+        "job_title": "Industrial Designer",
+        "department": "Design",
+        "employment_type": "US_1099_CONTRACTOR",
+        "status": "ONBOARDED",
+        "start_date": "2026-06-01",
+        "work_location": {
+          "city": "Milan",
+          "state": null,
+          "country_iso2": "IT"
+        },
+        "manager_name": "Rosalind Vane"
+      },
+      {
+        "employee_id": "emp-03142",
+        "first_name": "Kwame",
+        "last_name": "Boateng",
+        "work_email": "kwame.boateng@bramblewood.example",
+        "job_title": "Mechanical Engineer",
+        "department": "Engineering",
+        "employment_type": "EMPLOYEE",
+        "status": "ONBOARDED",
+        "start_date": "2025-08-04",
+        "work_location": {
+          "city": "Austin",
+          "state": "TX",
+          "country_iso2": "US"
+        },
+        "manager_name": "Rosalind Vane"
+      },
+      {
+        "employee_id": "emp-03149",
+        "first_name": "Saoirse",
+        "last_name": "Kavanagh",
+        "work_email": "saoirse.kavanagh@bramblewood.example",
+        "job_title": "Payroll Specialist",
+        "department": "Finance",
+        "employment_type": "EMPLOYEE",
+        "status": "ONBOARDED",
+        "start_date": "2024-11-12",
+        "work_location": {
+          "city": "New York",
+          "state": "NY",
+          "country_iso2": "US"
+        },
+        "manager_name": "Beatrix Nolan"
+      },
+      {
+        "employee_id": "emp-03156",
+        "first_name": "Beatrix",
+        "last_name": "Nolan",
+        "work_email": "beatrix.nolan@bramblewood.example",
+        "job_title": "Controller",
+        "department": "Finance",
+        "employment_type": "EMPLOYEE",
+        "status": "ONBOARDED",
+        "start_date": "2023-09-18",
+        "work_location": {
+          "city": "New York",
+          "state": "NY",
+          "country_iso2": "US"
+        },
+        "manager_name": null
+      },
+      {
+        "employee_id": "emp-03163",
+        "first_name": "Hiroshi",
+        "last_name": "Tanabe",
+        "work_email": "hiroshi.tanabe@bramblewood.example",
+        "job_title": "QA Engineer",
+        "department": "Engineering",
+        "employment_type": "EMPLOYEE",
+        "status": "ONBOARDED",
+        "start_date": "2025-01-07",
+        "work_location": {
+          "city": "Seattle",
+          "state": "WA",
+          "country_iso2": "US"
+        },
+        "manager_name": "Rosalind Vane"
+      },
+      {
+        "employee_id": "emp-03170",
+        "first_name": "Amara",
+        "last_name": "Diallo",
+        "work_email": "amara.diallo@bramblewood.example",
+        "job_title": "Recruiter",
+        "department": "People",
+        "employment_type": "EMPLOYEE",
+        "status": "ONBOARDED",
+        "start_date": "2025-06-16",
+        "work_location": {
+          "city": "Chicago",
+          "state": "IL",
+          "country_iso2": "US"
+        },
+        "manager_name": "Beatrix Nolan"
+      },
+      {
+        "employee_id": "emp-03177",
+        "first_name": "Lucas",
+        "last_name": "Ferreira",
+        "work_email": "lucas.ferreira@bramblewood.example",
+        "job_title": "Support Engineer",
+        "department": "Support",
+        "employment_type": "EMPLOYEE",
+        "status": "ONBOARDED",
+        "start_date": "2024-07-29",
+        "work_location": {
+          "city": "Austin",
+          "state": "TX",
+          "country_iso2": "US"
+        },
+        "manager_name": "Desmond Achebe"
+      },
+      {
+        "employee_id": "emp-03184",
+        "first_name": "Noor",
+        "last_name": "Al-Sabah",
+        "work_email": "noor.al-sabah@bramblewood.example",
+        "job_title": "Product Manager",
+        "department": "Product",
+        "employment_type": "EMPLOYEE",
+        "status": "ONBOARDED",
+        "start_date": "2024-04-08",
+        "work_location": {
+          "city": "San Francisco",
+          "state": "CA",
+          "country_iso2": "US"
+        },
+        "manager_name": "Rosalind Vane"
+      },
+      {
+        "employee_id": "emp-03191",
+        "first_name": "Elias",
+        "last_name": "Thorne",
+        "work_email": "elias.thorne@bramblewood.example",
+        "job_title": "Technical Writer",
+        "department": "Product",
+        "employment_type": "US_1099_CONTRACTOR",
+        "status": "ONBOARDED",
+        "start_date": "2026-02-02",
+        "work_location": {
+          "city": "Portland",
+          "state": "CA",
+          "country_iso2": "US"
+        },
+        "manager_name": "Noor Al-Sabah"
+      },
+      {
+        "employee_id": "emp-03198",
+        "first_name": "Freya",
+        "last_name": "Ostergaard",
+        "work_email": "freya.ostergaard@bramblewood.example",
+        "job_title": "Data Analyst",
+        "department": "Finance",
+        "employment_type": "EMPLOYEE",
+        "status": "ONBOARDED",
+        "start_date": "2025-10-20",
+        "work_location": {
+          "city": "Boston",
+          "state": "MA",
+          "country_iso2": "US"
+        },
+        "manager_name": "Beatrix Nolan"
+      },
+      {
+        "employee_id": "emp-03205",
+        "first_name": "Mateo",
+        "last_name": "Villalobos",
+        "work_email": "mateo.villalobos@bramblewood.example",
+        "job_title": "Field Technician",
+        "department": "Operations",
+        "employment_type": "EMPLOYEE",
+        "status": "ONBOARDED",
+        "start_date": "2025-05-05",
+        "work_location": {
+          "city": "San Diego",
+          "state": "CA",
+          "country_iso2": "US"
+        },
+        "manager_name": "Rosalind Vane"
+      },
+      {
+        "employee_id": "emp-03212",
+        "first_name": "Anouk",
+        "last_name": "Visser",
+        "work_email": "anouk.visser@bramblewood.example",
+        "job_title": "Operations Lead",
+        "department": "Operations",
+        "employment_type": "EMPLOYEE",
+        "status": "ONBOARDED",
+        "start_date": "2024-02-26",
+        "work_location": {
+          "city": "San Jose",
+          "state": "CA",
+          "country_iso2": "US"
+        },
+        "manager_name": "Rosalind Vane"
+      },
+      {
+        "employee_id": "emp-03219",
+        "first_name": "Tobias",
+        "last_name": "Werner",
+        "work_email": "tobias.werner@bramblewood.example",
+        "job_title": "Sales Engineer",
+        "department": "Sales",
+        "employment_type": "EMPLOYEE",
+        "status": "PENDING_ONBOARDING",
+        "start_date": "2026-09-29",
+        "work_location": {
+          "city": "Seattle",
+          "state": "WA",
+          "country_iso2": "US"
+        },
+        "manager_name": "Desmond Achebe"
+      },
+      {
+        "employee_id": "emp-03226",
+        "first_name": "Chiara",
+        "last_name": "Rossi",
+        "work_email": "chiara.rossi@bramblewood.example",
+        "job_title": "Office Manager",
+        "department": "People",
+        "employment_type": "EMPLOYEE",
+        "status": "ONBOARDED",
+        "start_date": "2023-11-06",
+        "work_location": {
+          "city": "Brooklyn",
+          "state": "NY",
+          "country_iso2": "US"
+        },
+        "manager_name": "Beatrix Nolan"
+      },
+      {
+        "employee_id": "emp-03233",
+        "first_name": "Oluwafemi",
+        "last_name": "Adeyemi",
+        "work_email": "oluwafemi.adeyemi@bramblewood.example",
+        "job_title": "Junior Engineer",
+        "department": "Engineering",
+        "employment_type": "EMPLOYEE",
+        "status": "PENDING_ONBOARDING",
+        "start_date": "2026-10-05",
+        "work_location": {
+          "city": "Austin",
+          "state": "TX",
+          "country_iso2": "US"
+        },
+        "manager_name": "Rosalind Vane"
+      },
+      {
+        "employee_id": "emp-03240",
+        "first_name": "Greta",
+        "last_name": "Lindholm",
+        "work_email": "greta.lindholm@bramblewood.example",
+        "job_title": "Marketing Lead",
+        "department": "Marketing",
+        "employment_type": "EMPLOYEE",
+        "status": "DISMISSED",
+        "start_date": "2023-07-17",
+        "work_location": {
+          "city": "Boston",
+          "state": "MA",
+          "country_iso2": "US"
+        },
+        "manager_name": "Desmond Achebe"
+      }
+    ]
+  },
+  "GET /employer/{employer_id}/employee/{employee_id}": {
+    "_note": "Keyed by employee_id. A mock server returns the matching object.",
+    "_records": {
+      "emp-03100": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03100",
+          "first_name": "Marisol",
+          "last_name": "Okonjo",
+          "work_email": "marisol.okonjo@bramblewood.example",
+          "job_title": "Senior Controls Engineer",
+          "department": "Engineering",
+          "employment_type": "EMPLOYEE",
+          "status": "PENDING_ONBOARDING",
+          "start_date": "2026-09-21",
+          "work_location": {
+            "city": "Brooklyn",
+            "state": "NY",
+            "country_iso2": "US"
+          },
+          "manager_name": "Rosalind Vane",
+          "compensation": {
+            "amount": 164000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": false,
+            "completed_steps": 4,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2026-09-21"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2026-09-21"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2026-09-21"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2026-09-21"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "PENDING",
+                "completed_date": null,
+                "blocked_on": "EMPLOYER",
+                "note": "Employer must verify original documents within 3 business days of the start date."
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03121",
+            "name": "Rosalind Vane",
+            "job_title": "VP Engineering"
+          },
+          "payroll_eligible": false,
+          "dismissal": null
+        }
+      },
+      "emp-03107": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03107",
+          "first_name": "Teodor",
+          "last_name": "Lindqvist",
+          "work_email": "teodor.lindqvist@bramblewood.example",
+          "job_title": "Firmware Technician",
+          "department": "Engineering",
+          "employment_type": "EMPLOYEE",
+          "status": "ONBOARDED",
+          "start_date": "2025-03-10",
+          "work_location": {
+            "city": "Austin",
+            "state": "TX",
+            "country_iso2": "US"
+          },
+          "manager_name": "Rosalind Vane",
+          "compensation": {
+            "amount": 88000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2025-03-10"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2025-03-10"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2025-03-10"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2025-03-10"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2025-03-10"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03121",
+            "name": "Rosalind Vane",
+            "job_title": "VP Engineering"
+          },
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03114": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03114",
+          "first_name": "Priya",
+          "last_name": "Raghunathan",
+          "work_email": "priya.raghunathan@bramblewood.example",
+          "job_title": "Account Manager",
+          "department": "Sales",
+          "employment_type": "EMPLOYEE",
+          "status": "DISMISSED",
+          "start_date": "2024-01-15",
+          "work_location": {
+            "city": "Chicago",
+            "state": "IL",
+            "country_iso2": "US"
+          },
+          "manager_name": "Desmond Achebe",
+          "compensation": {
+            "amount": 104000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2024-01-15"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2024-01-15"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2024-01-15"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2024-01-15"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2024-01-15"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03128",
+            "name": "Desmond Achebe",
+            "job_title": "Head of Sales"
+          },
+          "payroll_eligible": false,
+          "dismissal": {
+            "dismissal_date": "2026-08-31",
+            "final_pay_date": "2026-08-31",
+            "reason": "VOLUNTARY_RESIGNATION"
+          }
+        }
+      },
+      "emp-03121": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03121",
+          "first_name": "Rosalind",
+          "last_name": "Vane",
+          "work_email": "rosalind.vane@bramblewood.example",
+          "job_title": "VP Engineering",
+          "department": "Engineering",
+          "employment_type": "EMPLOYEE",
+          "status": "ONBOARDED",
+          "start_date": "2023-02-01",
+          "work_location": {
+            "city": "New York",
+            "state": "NY",
+            "country_iso2": "US"
+          },
+          "manager_name": null,
+          "compensation": {
+            "amount": 218000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2023-02-01"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2023-02-01"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2023-02-01"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2023-02-01"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2023-02-01"
+              }
+            ]
+          },
+          "manager": null,
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03128": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03128",
+          "first_name": "Desmond",
+          "last_name": "Achebe",
+          "work_email": "desmond.achebe@bramblewood.example",
+          "job_title": "Head of Sales",
+          "department": "Sales",
+          "employment_type": "EMPLOYEE",
+          "status": "ONBOARDED",
+          "start_date": "2023-05-22",
+          "work_location": {
+            "city": "New York",
+            "state": "NY",
+            "country_iso2": "US"
+          },
+          "manager_name": null,
+          "compensation": {
+            "amount": 205000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2023-05-22"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2023-05-22"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2023-05-22"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2023-05-22"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2023-05-22"
+              }
+            ]
+          },
+          "manager": null,
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03135": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03135",
+          "first_name": "Ines",
+          "last_name": "Bramante",
+          "work_email": "ines.bramante@bramblewood.example",
+          "job_title": "Industrial Designer",
+          "department": "Design",
+          "employment_type": "US_1099_CONTRACTOR",
+          "status": "ONBOARDED",
+          "start_date": "2026-06-01",
+          "work_location": {
+            "city": "Milan",
+            "state": null,
+            "country_iso2": "IT"
+          },
+          "manager_name": "Rosalind Vane",
+          "compensation": {
+            "amount": 95,
+            "currency": "USD",
+            "frequency": "HOURLY"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2026-06-01"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2026-06-01"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2026-06-01"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2026-06-01"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2026-06-01"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03121",
+            "name": "Rosalind Vane",
+            "job_title": "VP Engineering"
+          },
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03142": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03142",
+          "first_name": "Kwame",
+          "last_name": "Boateng",
+          "work_email": "kwame.boateng@bramblewood.example",
+          "job_title": "Mechanical Engineer",
+          "department": "Engineering",
+          "employment_type": "EMPLOYEE",
+          "status": "ONBOARDED",
+          "start_date": "2025-08-04",
+          "work_location": {
+            "city": "Austin",
+            "state": "TX",
+            "country_iso2": "US"
+          },
+          "manager_name": "Rosalind Vane",
+          "compensation": {
+            "amount": 128000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2025-08-04"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2025-08-04"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2025-08-04"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2025-08-04"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2025-08-04"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03121",
+            "name": "Rosalind Vane",
+            "job_title": "VP Engineering"
+          },
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03149": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03149",
+          "first_name": "Saoirse",
+          "last_name": "Kavanagh",
+          "work_email": "saoirse.kavanagh@bramblewood.example",
+          "job_title": "Payroll Specialist",
+          "department": "Finance",
+          "employment_type": "EMPLOYEE",
+          "status": "ONBOARDED",
+          "start_date": "2024-11-12",
+          "work_location": {
+            "city": "New York",
+            "state": "NY",
+            "country_iso2": "US"
+          },
+          "manager_name": "Beatrix Nolan",
+          "compensation": {
+            "amount": 96000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2024-11-12"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2024-11-12"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2024-11-12"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2024-11-12"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2024-11-12"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03156",
+            "name": "Beatrix Nolan",
+            "job_title": "Controller"
+          },
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03156": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03156",
+          "first_name": "Beatrix",
+          "last_name": "Nolan",
+          "work_email": "beatrix.nolan@bramblewood.example",
+          "job_title": "Controller",
+          "department": "Finance",
+          "employment_type": "EMPLOYEE",
+          "status": "ONBOARDED",
+          "start_date": "2023-09-18",
+          "work_location": {
+            "city": "New York",
+            "state": "NY",
+            "country_iso2": "US"
+          },
+          "manager_name": null,
+          "compensation": {
+            "amount": 186000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2023-09-18"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2023-09-18"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2023-09-18"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2023-09-18"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2023-09-18"
+              }
+            ]
+          },
+          "manager": null,
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03163": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03163",
+          "first_name": "Hiroshi",
+          "last_name": "Tanabe",
+          "work_email": "hiroshi.tanabe@bramblewood.example",
+          "job_title": "QA Engineer",
+          "department": "Engineering",
+          "employment_type": "EMPLOYEE",
+          "status": "ONBOARDED",
+          "start_date": "2025-01-07",
+          "work_location": {
+            "city": "Seattle",
+            "state": "WA",
+            "country_iso2": "US"
+          },
+          "manager_name": "Rosalind Vane",
+          "compensation": {
+            "amount": 118000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2025-01-07"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2025-01-07"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2025-01-07"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2025-01-07"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2025-01-07"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03121",
+            "name": "Rosalind Vane",
+            "job_title": "VP Engineering"
+          },
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03170": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03170",
+          "first_name": "Amara",
+          "last_name": "Diallo",
+          "work_email": "amara.diallo@bramblewood.example",
+          "job_title": "Recruiter",
+          "department": "People",
+          "employment_type": "EMPLOYEE",
+          "status": "ONBOARDED",
+          "start_date": "2025-06-16",
+          "work_location": {
+            "city": "Chicago",
+            "state": "IL",
+            "country_iso2": "US"
+          },
+          "manager_name": "Beatrix Nolan",
+          "compensation": {
+            "amount": 92000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2025-06-16"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2025-06-16"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2025-06-16"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2025-06-16"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2025-06-16"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03156",
+            "name": "Beatrix Nolan",
+            "job_title": "Controller"
+          },
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03177": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03177",
+          "first_name": "Lucas",
+          "last_name": "Ferreira",
+          "work_email": "lucas.ferreira@bramblewood.example",
+          "job_title": "Support Engineer",
+          "department": "Support",
+          "employment_type": "EMPLOYEE",
+          "status": "ONBOARDED",
+          "start_date": "2024-07-29",
+          "work_location": {
+            "city": "Austin",
+            "state": "TX",
+            "country_iso2": "US"
+          },
+          "manager_name": "Desmond Achebe",
+          "compensation": {
+            "amount": 94000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2024-07-29"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2024-07-29"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2024-07-29"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2024-07-29"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2024-07-29"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03128",
+            "name": "Desmond Achebe",
+            "job_title": "Head of Sales"
+          },
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03184": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03184",
+          "first_name": "Noor",
+          "last_name": "Al-Sabah",
+          "work_email": "noor.al-sabah@bramblewood.example",
+          "job_title": "Product Manager",
+          "department": "Product",
+          "employment_type": "EMPLOYEE",
+          "status": "ONBOARDED",
+          "start_date": "2024-04-08",
+          "work_location": {
+            "city": "San Francisco",
+            "state": "CA",
+            "country_iso2": "US"
+          },
+          "manager_name": "Rosalind Vane",
+          "compensation": {
+            "amount": 158000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2024-04-08"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2024-04-08"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2024-04-08"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2024-04-08"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2024-04-08"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03121",
+            "name": "Rosalind Vane",
+            "job_title": "VP Engineering"
+          },
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03191": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03191",
+          "first_name": "Elias",
+          "last_name": "Thorne",
+          "work_email": "elias.thorne@bramblewood.example",
+          "job_title": "Technical Writer",
+          "department": "Product",
+          "employment_type": "US_1099_CONTRACTOR",
+          "status": "ONBOARDED",
+          "start_date": "2026-02-02",
+          "work_location": {
+            "city": "Portland",
+            "state": "CA",
+            "country_iso2": "US"
+          },
+          "manager_name": "Noor Al-Sabah",
+          "compensation": {
+            "amount": 78,
+            "currency": "USD",
+            "frequency": "HOURLY"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2026-02-02"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2026-02-02"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2026-02-02"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2026-02-02"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2026-02-02"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03184",
+            "name": "Noor Al-Sabah",
+            "job_title": "Product Manager"
+          },
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03198": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03198",
+          "first_name": "Freya",
+          "last_name": "Ostergaard",
+          "work_email": "freya.ostergaard@bramblewood.example",
+          "job_title": "Data Analyst",
+          "department": "Finance",
+          "employment_type": "EMPLOYEE",
+          "status": "ONBOARDED",
+          "start_date": "2025-10-20",
+          "work_location": {
+            "city": "Boston",
+            "state": "MA",
+            "country_iso2": "US"
+          },
+          "manager_name": "Beatrix Nolan",
+          "compensation": {
+            "amount": 112000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2025-10-20"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2025-10-20"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2025-10-20"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2025-10-20"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2025-10-20"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03156",
+            "name": "Beatrix Nolan",
+            "job_title": "Controller"
+          },
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03205": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03205",
+          "first_name": "Mateo",
+          "last_name": "Villalobos",
+          "work_email": "mateo.villalobos@bramblewood.example",
+          "job_title": "Field Technician",
+          "department": "Operations",
+          "employment_type": "EMPLOYEE",
+          "status": "ONBOARDED",
+          "start_date": "2025-05-05",
+          "work_location": {
+            "city": "San Diego",
+            "state": "CA",
+            "country_iso2": "US"
+          },
+          "manager_name": "Rosalind Vane",
+          "compensation": {
+            "amount": 76000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2025-05-05"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2025-05-05"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2025-05-05"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2025-05-05"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2025-05-05"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03121",
+            "name": "Rosalind Vane",
+            "job_title": "VP Engineering"
+          },
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03212": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03212",
+          "first_name": "Anouk",
+          "last_name": "Visser",
+          "work_email": "anouk.visser@bramblewood.example",
+          "job_title": "Operations Lead",
+          "department": "Operations",
+          "employment_type": "EMPLOYEE",
+          "status": "ONBOARDED",
+          "start_date": "2024-02-26",
+          "work_location": {
+            "city": "San Jose",
+            "state": "CA",
+            "country_iso2": "US"
+          },
+          "manager_name": "Rosalind Vane",
+          "compensation": {
+            "amount": 132000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2024-02-26"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2024-02-26"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2024-02-26"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2024-02-26"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2024-02-26"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03121",
+            "name": "Rosalind Vane",
+            "job_title": "VP Engineering"
+          },
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03219": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03219",
+          "first_name": "Tobias",
+          "last_name": "Werner",
+          "work_email": "tobias.werner@bramblewood.example",
+          "job_title": "Sales Engineer",
+          "department": "Sales",
+          "employment_type": "EMPLOYEE",
+          "status": "PENDING_ONBOARDING",
+          "start_date": "2026-09-29",
+          "work_location": {
+            "city": "Seattle",
+            "state": "WA",
+            "country_iso2": "US"
+          },
+          "manager_name": "Desmond Achebe",
+          "compensation": {
+            "amount": 126000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": false,
+            "completed_steps": 4,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2026-09-29"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2026-09-29"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2026-09-29"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2026-09-29"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "PENDING",
+                "completed_date": null,
+                "blocked_on": "EMPLOYER",
+                "note": "Employer must verify original documents within 3 business days of the start date."
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03128",
+            "name": "Desmond Achebe",
+            "job_title": "Head of Sales"
+          },
+          "payroll_eligible": false,
+          "dismissal": null
+        }
+      },
+      "emp-03226": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03226",
+          "first_name": "Chiara",
+          "last_name": "Rossi",
+          "work_email": "chiara.rossi@bramblewood.example",
+          "job_title": "Office Manager",
+          "department": "People",
+          "employment_type": "EMPLOYEE",
+          "status": "ONBOARDED",
+          "start_date": "2023-11-06",
+          "work_location": {
+            "city": "Brooklyn",
+            "state": "NY",
+            "country_iso2": "US"
+          },
+          "manager_name": "Beatrix Nolan",
+          "compensation": {
+            "amount": 72000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2023-11-06"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2023-11-06"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2023-11-06"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2023-11-06"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2023-11-06"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03156",
+            "name": "Beatrix Nolan",
+            "job_title": "Controller"
+          },
+          "payroll_eligible": true,
+          "dismissal": null
+        }
+      },
+      "emp-03233": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03233",
+          "first_name": "Oluwafemi",
+          "last_name": "Adeyemi",
+          "work_email": "oluwafemi.adeyemi@bramblewood.example",
+          "job_title": "Junior Engineer",
+          "department": "Engineering",
+          "employment_type": "EMPLOYEE",
+          "status": "PENDING_ONBOARDING",
+          "start_date": "2026-10-05",
+          "work_location": {
+            "city": "Austin",
+            "state": "TX",
+            "country_iso2": "US"
+          },
+          "manager_name": "Rosalind Vane",
+          "compensation": {
+            "amount": 82000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": false,
+            "completed_steps": 4,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2026-10-05"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2026-10-05"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2026-10-05"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2026-10-05"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "PENDING",
+                "completed_date": null,
+                "blocked_on": "EMPLOYER",
+                "note": "Employer must verify original documents within 3 business days of the start date."
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03121",
+            "name": "Rosalind Vane",
+            "job_title": "VP Engineering"
+          },
+          "payroll_eligible": false,
+          "dismissal": null
+        }
+      },
+      "emp-03240": {
+        "message": "Success",
+        "data": {
+          "employee_id": "emp-03240",
+          "first_name": "Greta",
+          "last_name": "Lindholm",
+          "work_email": "greta.lindholm@bramblewood.example",
+          "job_title": "Marketing Lead",
+          "department": "Marketing",
+          "employment_type": "EMPLOYEE",
+          "status": "DISMISSED",
+          "start_date": "2023-07-17",
+          "work_location": {
+            "city": "Boston",
+            "state": "MA",
+            "country_iso2": "US"
+          },
+          "manager_name": "Desmond Achebe",
+          "compensation": {
+            "amount": 142000,
+            "currency": "USD",
+            "frequency": "ANNUAL"
+          },
+          "onboarding": {
+            "complete": true,
+            "completed_steps": 5,
+            "total_steps": 5,
+            "steps": [
+              {
+                "name": "Personal details",
+                "status": "COMPLETE",
+                "completed_date": "2023-07-17"
+              },
+              {
+                "name": "Tax withholding (W-4)",
+                "status": "COMPLETE",
+                "completed_date": "2023-07-17"
+              },
+              {
+                "name": "Direct deposit",
+                "status": "COMPLETE",
+                "completed_date": "2023-07-17"
+              },
+              {
+                "name": "I-9 Section 1",
+                "status": "COMPLETE",
+                "completed_date": "2023-07-17"
+              },
+              {
+                "name": "I-9 Section 2",
+                "status": "COMPLETE",
+                "completed_date": "2023-07-17"
+              }
+            ]
+          },
+          "manager": {
+            "employee_id": "emp-03128",
+            "name": "Desmond Achebe",
+            "job_title": "Head of Sales"
+          },
+          "payroll_eligible": false,
+          "dismissal": {
+            "dismissal_date": "2026-05-15",
+            "final_pay_date": "2026-05-30",
+            "reason": "ROLE_ELIMINATED"
+          }
+        }
+      }
+    }
+  }
+}
