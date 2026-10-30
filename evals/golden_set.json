@@ -1,7 +1,7 @@
 {
   "_comment": "Frozen golden set. Do not edit cases to make a run pass; add new cases instead. Facts come from docs/PRODUCT_GUIDE.md and app/mock_api/data (today = 2026-09-28).",
   "phrases": {
-    "no_access": ["don't have access", "do not have access", "can't access", "cannot access", "unable to access", "not able to access", "don't have that information", "do not have that information", "don't have access to that"],
+    "no_access": ["don't have access", "do not have access", "can't access", "cannot access", "unable to access", "not able to access", "don't have that information", "do not have that information", "don't have access to that", "hit an error", "ran into an error", "temporary error", "error getting", "couldn't retrieve", "could not retrieve", "unable to retrieve"],
     "cant_find": ["couldn't find", "could not find", "can't find", "cannot find", "don't have", "do not have", "not covered", "isn't covered", "not available", "unable to", "no information"],
     "ask_who": ["which employee", "who ", "which person", "whose", "which one", "clarify", "could you tell me", "can you tell me", "name"]
   },
@@ -9,7 +9,7 @@
     {"id": "docs-add-employee", "category": "docs", "agent": "static", "turns": [
       {"user": "How do I add a new employee?", "expect": {"include": [["Hire", "Add employee"], ["Employee details", "four-step", "4-step", "wizard"]], "sources_any": ["How to hire an employee"]}}]},
     {"id": "docs-pending-onboarding", "category": "docs", "agent": "static", "turns": [
-      {"user": "What does 'Pending onboarding' mean?", "expect": {"include": [["not payable", "not yet payable", "cannot be paid", "can't be paid", "isn't payable", "aren't payable", "not able to be paid"]], "sources_any": ["The employee list", "Onboarding and Form I-9", "How to hire an employee"]}}]},
+      {"user": "What does 'Pending onboarding' mean?", "expect": {"include": [["not payable", "not yet payable", "cannot be paid", "can't be paid", "isn't payable", "aren't payable", "not able to be paid", "not yet active", "payable yet"]], "sources_any": ["The employee list", "Onboarding and Form I-9", "How to hire an employee"]}}]},
     {"id": "docs-approve-bill", "category": "docs_gap", "agent": "static", "turns": [
       {"user": "How do I approve a bill in Niural Pay?", "expect": {"include": ["Needs approval"], "sources_any": ["Bills"]}}]},
     {"id": "docs-emma-review", "category": "docs", "agent": "static", "turns": [

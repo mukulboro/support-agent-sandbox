@@ -26,14 +26,19 @@ HERE = Path(__file__).parent
 PRICE_PER_MILLION = {"gpt-5-nano": (0.05, 0.40)}  # (input, output) USD, list-price estimate from third-party trackers
 
 
+def normalise(text: str) -> str:
+    """Lower case and straighten curly quotes: the model writes "couldn’t", the expectations say "couldn't"."""
+    return text.lower().replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"')
+
+
 def matches(item: str, text: str, phrases: dict) -> bool:
     """One thing the answer must contain: plain text, a regex ('re:...') or a named phrase list ('ref:...')."""
-    text = text.lower()
+    text = normalise(text)
     if item.startswith("ref:"):
-        return any(p.lower() in text for p in phrases[item[4:]])
+        return any(normalise(p) in text for p in phrases[item[4:]])
     if item.startswith("re:"):
         return re.search(item[3:], text, re.IGNORECASE) is not None
-    return item.lower() in text
+    return normalise(item) in text
 
 
 def check(result: dict, expect: dict, phrases: dict) -> list[str]:
@@ -177,10 +182,10 @@ def main() -> None:
                 t["repeat"] = repeat
             traces += case_traces
             ok = all(t["passed"] for t in case_traces)
-            print(f"{'PASS' if ok else 'FAIL'}  {case['id']}")
+            print(f"{'PASS' if ok else 'FAIL'}  {case['id']}", flush=True)
             for t in case_traces:
                 for failure in t["failures"]:
-                    print(f"        turn {t['turn']}: {failure}")
+                    print(f"        turn {t['turn']}: {failure}", flush=True)
 
     (out / "traces.jsonl").write_text("\n".join(json.dumps(t) for t in traces) + "\n", encoding="utf-8")
     summary = summarise(traces, settings.llm_model)
