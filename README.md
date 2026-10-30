@@ -94,10 +94,9 @@ aspect of the system. Human in the loop for changes
 
 COMPLETED: static agent (hybrid retrieval, sources), dynamic agent (6 tools, counts and totals computed in code), router,
 conversation manager, HTTP server with health checks, chat CLI, auditor with a human review mode, Docker stack, golden set
-with eval runner, and the evaluation runs below.
+with eval runner, a latency test, 54 unit tests, and the evaluation runs.
 
 PENDING:
-- Tests for the router and ChatService (only the mock API and the tool dispatcher have unit tests).
 - Escalate automatically after the last LLM retry fails.
 - Two answers are still weak: `docs-pending-onboarding` (says it cannot find a definition) and `acct-failed-payment-no-id`
   (asks for the invoice when only the transaction id can explain a failed payment).
