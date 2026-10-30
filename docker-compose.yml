@@ -1,17 +1,24 @@
 services:
   qdrant:
-    image: qdrant/qdrant:v1.15.0
+    image: qdrant/qdrant:v1.20.0  # must match qdrant-client: the server computes the BM25 vectors
     volumes:
       - qdrant_data:/qdrant/storage
-    # the image has no curl/wget, so probe the port with bash
+    # the image has no curl/wget, so ask Qdrant's /readyz endpoint with plain bash
     healthcheck:
-      test: ["CMD", "bash", "-c", ":> /dev/tcp/localhost/6333"]
+      test:
+        - CMD
+        - bash
+        - -c
+        - 'exec 3<>/dev/tcp/localhost/6333 && printf "GET /readyz HTTP/1.0\r\n\r\n" >&3 && head -n 1 <&3 | grep -q 200'
       interval: 3s
       timeout: 3s
       retries: 20
 
   app:
-    build: .
+    build:
+      context: .
+      args:
+        PYPI_MIRROR: ${PYPI_MIRROR:-https://pypi.org/simple}
     env_file: .env
     environment:
       QDRANT_URL: http://qdrant:6333
@@ -23,6 +30,13 @@ services:
     depends_on:
       qdrant:
         condition: service_healthy
+    # /health is 200 only once startup ingestion finished and Qdrant has the chunks (urlopen fails on a 503)
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 90s  # first start downloads the BM25 model and embeds the guide
 
 volumes:
   qdrant_data:

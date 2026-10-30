@@ -15,6 +15,13 @@ class VectorStore:
                 sparse_vectors_config={"bm25": models.SparseVectorParams(modifier=models.Modifier.IDF)},
             )
 
+    def is_ready(self) -> bool:
+        """True when Qdrant answers and the collection holds points."""
+        try:
+            return self.client.collection_exists(self.collection) and self.client.count(self.collection).count > 0
+        except Exception:  # any connection problem means not ready
+            return False
+
     def existing_ids(self) -> set[str]:
         ids = set()
         offset = None

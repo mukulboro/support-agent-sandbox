@@ -1,10 +1,15 @@
 FROM python:3.12-slim
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
-WORKDIR /srv
-ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy PATH="/srv/.venv/bin:$PATH"
 
+# Package index used for the build. Override with a nearer mirror if PyPI is slow: PYPI_MIRROR=... docker compose build
+ARG PYPI_MIRROR=https://pypi.org/simple
+
+RUN pip install --no-cache-dir --index-url $PYPI_MIRROR uv
+WORKDIR /srv
+
+# uv.lock pins every package and hash, so the same files are installed whichever index serves them
 COPY pyproject.toml uv.lock ./
-RUN uv sync --frozen --no-dev --no-install-project
+RUN uv export --frozen --no-dev --no-emit-project --output-file requirements.txt \
+    && uv pip install --system --no-cache --index-url $PYPI_MIRROR -r requirements.txt
 
 COPY app ./app
 COPY docs ./docs
