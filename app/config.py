@@ -30,6 +30,12 @@ class Settings(BaseSettings):
     max_tool_rounds: int = 6  # the dynamic agent stops asking for tools after this many rounds
 
     llm_retries: int = 3
+    # the router makes the decision everything else depends on, so it gets a stronger model than the agents.
+    # gpt-5-nano was inconsistent on "unsupported" (3 of 6 for the wallet question); gpt-5-mini was 5 of 5 even at minimal
+    router_model: str = "gpt-5-mini"
+    router_reasoning_first: str = "minimal"
+    router_reasoning_retry: str = "low"
+
     llm_reasoning_first: str = "low"  # first attempt: light reasoning ("minimal" gave empty answers)
     llm_reasoning_retry: str = "medium"  # retries: reasoning on
 

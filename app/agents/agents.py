@@ -11,6 +11,14 @@ AGENTS = Path(__file__).parent
 
 GIVE_UP = "I'm sorry, I couldn't finish looking that up. Could you narrow the question down a little?"
 
+AGENT_NAMES = ("static", "dynamic")
+MAX_QUERIES = 2  # one per agent is the most a single message needs
+DEFAULT_REPLIES = {
+    "unsupported": "I'm sorry, I can't help with that here. Would you like me to escalate this to a human, or end the conversation?",
+    "escalate": "I'm passing this to a human colleague who will follow up with you.",
+    "end": "Glad I could help. Goodbye!",
+}
+
 
 def load_tool(name: str) -> dict:
     """Reads agents/tools/<name>.yaml and returns it as an OpenAI function definition."""
@@ -24,10 +32,30 @@ def load_api_tools() -> list[dict]:
 
 
 class RouterAgent:
-    """Decides which agent handles a message. For now everything goes to the static agent."""
+    """Reads the latest message and the history and decides what happens: answer (which agents, which queries),
+    unsupported (we cannot do this), escalate or end."""
 
-    def route(self, message: str, history: list[dict]) -> str:
-        return "static"
+    def __init__(self, llm: LLM):
+        self.llm = llm
+        self.prompt = (AGENTS / "prompts" / "router.md").read_text(encoding="utf-8")
+        self.tool = load_tool("route_message")
+
+    def route(self, message: str, history: list[dict]) -> dict:
+        """Returns {"action": "answer" | "unsupported" | "escalate" | "end", "queries": [{"agent", "query"}], "reply": str}."""
+        messages = [{"role": "system", "content": self.prompt}] + history + [{"role": "user", "content": message}]
+        plan = self.llm.call_tool(messages, self.tool)
+
+        action = plan.get("action")
+        if action not in ("answer", "unsupported", "escalate", "end"):
+            raise ValueError(f"router returned an unknown action: {action!r}")
+
+        # the model does not always fill every field, so read the optional ones defensively
+        queries = [q for q in plan.get("queries") or [] if q.get("agent") in AGENT_NAMES and q.get("query", "").strip()]
+        queries = queries[:MAX_QUERIES]
+        if action == "answer" and not queries:
+            queries = [{"agent": "static", "query": message}]  # nothing usable came back: fall back to the help articles
+        reply = (plan.get("reply") or "").strip() or DEFAULT_REPLIES.get(action, "")
+        return {"action": action, "queries": queries if action == "answer" else [], "reply": reply}
 
 
 class StaticAgent:

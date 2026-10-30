@@ -1,0 +1,29 @@
+name: route_message
+description: Decide what happens to the customer's latest message. Call this exactly once.
+parameters:
+  type: object
+  properties:
+    action:
+      type: string
+      enum: [answer, unsupported, escalate, end]
+      description: >
+        answer = send queries to the agents. unsupported = this system cannot handle the request.
+        escalate = hand over to a human. end = the customer is done.
+    queries:
+      type: array
+      description: For answer, one or two self-contained queries, each for one agent. Empty for every other action.
+      items:
+        type: object
+        properties:
+          agent:
+            type: string
+            enum: [static, dynamic]
+            description: static explains how the product works from the help articles. dynamic looks up this customer's own data.
+          query:
+            type: string
+            description: The question rewritten so it makes sense without the conversation.
+        required: [agent, query]
+    reply:
+      type: string
+      description: For unsupported, escalate and end, the short message to show the customer. Empty for answer.
+  required: [action, queries, reply]

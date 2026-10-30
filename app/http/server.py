@@ -2,10 +2,11 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from app.agents.agents import RouterAgent, StaticAgent
+from app.agents.agents import DynamicAgent, RouterAgent, StaticAgent, load_api_tools
 from app.config import get_settings
 from app.http.routes import router
 from app.http.services import ChatService
+from app.mock_api.mock_api import mock_request
 from app.rag.ingestor import StaticKnowledgeIngester
 from app.rag.retriever import Retriever
 from app.repository.vector import VectorStore
@@ -13,6 +14,7 @@ from app.tools.convo_manager import ConversationManager
 from app.tools.embed import Embedder
 from app.tools.llm import LLM
 from app.tools.logger import get_logger
+from app.tools.tools import ToolDispatcher
 
 log = get_logger(__name__)
 
@@ -38,7 +40,20 @@ async def lifespan(app: FastAPI):
         settings.llm_reasoning_retry,
     )
     app.state.store = store  # the health check asks it whether Qdrant is ready
-    app.state.service = ChatService(RouterAgent(), StaticAgent(llm, retriever), ConversationManager())
+    agents = {
+        "static": StaticAgent(llm, retriever),
+        "dynamic": DynamicAgent(
+            llm, ToolDispatcher(mock_request, load_api_tools()), settings.today, settings.max_tool_rounds
+        ),
+    }
+    router_llm = LLM(
+        settings.openai_api_key,
+        settings.router_model,
+        settings.llm_retries,
+        settings.router_reasoning_first,
+        settings.router_reasoning_retry,
+    )
+    app.state.service = ChatService(RouterAgent(router_llm), agents, ConversationManager())
 
     log.info("server ready")
     yield
