@@ -1,3 +1,9 @@
+> **This is only a placeholder README.** It is my own design notes, jotted down while planning, with a status marker
+> on each idea. The real documentation (what it does, setup, API, evaluation and results) is in
+> [`.github/README.md`](.github/README.md), which GitHub shows on the repository page.
+
+# Support Agent Sandbox: design notes
+
 Customer service agent
 1. can answer from supplied documentation (static queries)
 2. can answer from API (dynamic queries)
@@ -91,72 +97,10 @@ conversation manager, HTTP server with health checks, chat CLI, auditor with a h
 with eval runner, and the evaluation runs below.
 
 PENDING:
-- Setup instructions and a description of how to call the HTTP API directly (the supplied evaluation interface was not in the package).
 - Tests for the router and ChatService (only the mock API and the tool dispatcher have unit tests).
 - Escalate automatically after the last LLM retry fails.
-- Known weak spots, see "Real failures still open" below.
+- Two answers are still weak: `docs-pending-onboarding` (says it cannot find a definition) and `acct-failed-payment-no-id`
+  (asks for the invoice when only the transaction id can explain a failed payment).
 - Optional: turn low-scoring audited conversations into draft golden cases.
 
----
-
-# Evaluation
-
-`evals/golden_set.json` is the frozen test set: 57 cases. 39 call an agent directly (docs answers, account questions,
-multi-turn corrections, ambiguity, isolation and injected tool failures) and 18 go through the router and ChatService
-(category `routing`). Facts come from `docs/PRODUCT_GUIDE.md` and `app/mock_api/data` (today is 2026-09-28). Cases are
-not edited to make a run pass; new behaviour gets new cases.
-
-```
-uv run python -m evals.run --label <name>                          # run everything, traces in evals/runs/<name>/
-uv run python -m evals.run --label <name> --only id1,id2            # a few cases
-uv run python -m evals.run --label <name> --category routing --repeats 3   # repeat cases to see flaky ones
-uv run python -m evals.compare <before> <after>                     # fixed, regressed and still failing, per case
-uv run python -m evals.rescore --from <name> --to <name>-rescored   # score saved traces again, no LLM calls
-```
-
-Each turn is scored by code, with no LLM judge: required text (alternatives and regexes), forbidden text, sources,
-tools that must be called and a tool-call cap. A case passes only if every turn passes. Each run also records latency,
-LLM calls, tokens and an estimated cost (list prices, not billed amounts).
-
-## Results so far (model: `gpt-5-nano`, reasoning `low`, `medium` on retry)
-
-| Run | Pass | Notes |
-|---|---|---|
-| `baseline` | 26/39 (67%) | First run. 77 LLM calls, about $0.01, median latency 4.1s, p95 6.6s. |
-| `baseline-rescored` | 34/39 (87%) | Same traces, scorer fixed (below). No new LLM calls. |
-| `revised-priya` | 33/39 | Targeted change: do not add a status filter when looking up a named person. `acct-priya-payroll` fixed. The two new failures were a phrase my scorer missed and a badly designed exclusion, not behaviour changes. |
-| `revised-no-offers` | 34/39 | Added a read-only rule (never offer actions the agent cannot do). The two earlier "regressions" passed again, which shows run-to-run noise; `acct-halberd-unpaid` failed (it sometimes skips the detail call, about 1 run in 3). |
-| `routing-baseline` | 53/54 runs, 17/18 cases stable | 18 routed cases, 3 repeats each, router `gpt-5-mini`. The one failure was an over-strict check, not a routing error. About $0.034. |
-
-By category after the scorer fix: account 10/11, multi_turn 5/5, isolation 1/1, tool_failure 4/4, out_of_scope 3/3,
-docs 9/11, ambiguity 2/3, docs_gap 0/1.
-
-### Scorer fix after the baseline
-
-Reading the 13 baseline failures showed 8 were the scorer's fault. Every one of those answers was correct and honest.
-The model writes curly apostrophes ("couldn’t") and the expected phrases used straight ones, which alone broke 6 cases.
-Two phrase lists also missed equivalent wording ("not yet active or payable", "I hit an error getting the details").
-`matches()` in `evals/run.py` now straightens quotes and the two lists got alternatives. Nothing was loosened to hide a
-real failure.
-
-### Real failures still open
-
-| Case | What went wrong | Status |
-|---|---|---|
-| `acct-priya-payroll` | Filtered `status=ONBOARDED` for a named person, found nobody, never tried other statuses. Priya is DISMISSED. | FIXED in `revised-priya` |
-| `acct-halberd-unpaid` | Sometimes answers from the bill list and never calls `get_vendor_invoice`, so the approver is not named. | CHANGE MADE (tool descriptions and a prompt rule), NOT YET RE-RUN |
-| `acct-headcount-ambiguous` | Answered "21 employees" with no status split; the guide says headcount depends on status (16 active). | CHANGE MADE (`count_by_status` computed in code and a prompt rule), NOT YET RE-RUN |
-| `docs-onboarding-tab` | Retrieval ranks the `The employee list` section 6th to 9th, so the answer cites the wrong sources. | IN PROGRESS: comparing 5 chunks and 3 sections against 12 and 6 |
-| `docs-approve-bill` | Correctly says the docs have no approval steps, but never mentions the Needs approval tab. | PENDING |
-| `docs-add-employee` | One-line answer with no wizard or steps. | PENDING |
-
-The final results section (initial vs revised code, before and after on the same cases, regressions and the keep or
-rollback decision) will replace this once the targeted change is done.
-
-## Notes
-
-- Docker builds are slow where PyPI is slow. Build with a nearer mirror that is fully synced:
-  `PYPI_MIRROR=https://pypi.tuna.tsinghua.edu.cn/simple docker compose up --build`. A lagging mirror (Huawei was
-  missing `hf-xet 1.8.0`) or a rate-limiting one (USTC returned 429 on parallel downloads) fails the install.
-- The Qdrant server must match `qdrant-client` (both 1.20): the client leaves BM25 `Document` vectors for the server
-  to compute, and an older server fails with "InferenceService is not initialized".
+Setup, the HTTP API, the evaluation and its results are documented in [`.github/README.md`](.github/README.md).
