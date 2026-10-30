@@ -1,0 +1,35 @@
+{
+  "model": "gpt-5-nano",
+  "router_model": "gpt-5-mini",
+  "cases": 11,
+  "passed": 9,
+  "pass_rate": 0.818,
+  "runs": 33,
+  "runs_passed": 29,
+  "flaky": [
+    "docs-onboarding-tab"
+  ],
+  "by_category": {
+    "docs": "9/11"
+  },
+  "case_results": {
+    "docs-add-employee": true,
+    "docs-pending-onboarding": false,
+    "docs-emma-review": true,
+    "docs-add-vendor": true,
+    "docs-kyb": true,
+    "docs-ready-vs-transaction": true,
+    "docs-create-customer-invoice": true,
+    "docs-two-currencies": true,
+    "docs-i9-section2": true,
+    "docs-new-hire-not-payable": true,
+    "docs-onboarding-tab": false
+  },
+  "latency_median_s": 3.36,
+  "latency_p95_s": 5.44,
+  "llm_calls": 33,
+  "prompt_tokens": 57663,
+  "completion_tokens": 10572,
+  "est_cost_usd": 0.0071,
+  "label": "retr-wide-12-6"
+}

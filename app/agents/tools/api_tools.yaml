@@ -3,8 +3,8 @@
 
 - name: list_employees
   description: >
-    List the employer's employees (summary fields only). All filters are optional and combine with AND.
-    The result includes a count, so never count the items yourself.
+    List the employer's employees (summary fields only: no compensation and no onboarding steps; use get_employee for those).
+    All filters are optional and combine with AND. The result includes a count and count_by_status, so never count the items yourself.
   parameters:
     type: object
     properties:
@@ -47,8 +47,9 @@
 
 - name: list_vendor_invoices
   description: >
-    List bills owed to vendors (summary fields only). All filters are optional and combine with AND.
-    The result includes a count and total_by_currency computed in code, so never add amounts up yourself.
+    List bills owed to vendors (summary fields only: no approval chain and no line items, so it does not say who a bill is
+    waiting on; use get_vendor_invoice for that). All filters are optional and combine with AND.
+    The result includes a count, count_by_status and total_by_currency computed in code, so never add amounts up yourself.
     To find what is still owed, filter status to OVERDUE, PENDING_APPROVAL and SCHEDULED.
   parameters:
     type: object

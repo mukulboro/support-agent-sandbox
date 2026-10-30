@@ -1,0 +1,27 @@
+{
+  "model": "gpt-5-nano",
+  "router_model": "gpt-5-mini",
+  "cases": 4,
+  "passed": 4,
+  "pass_rate": 1.0,
+  "runs": 20,
+  "runs_passed": 20,
+  "flaky": [],
+  "by_category": {
+    "account": "3/3",
+    "ambiguity": "1/1"
+  },
+  "case_results": {
+    "acct-marisol-onboarding": true,
+    "acct-priya-payroll": true,
+    "acct-halberd-unpaid": true,
+    "acct-headcount-ambiguous": true
+  },
+  "latency_median_s": 6.0649999999999995,
+  "latency_p95_s": 7.15,
+  "llm_calls": 55,
+  "prompt_tokens": 103808,
+  "completion_tokens": 7756,
+  "est_cost_usd": 0.0083,
+  "label": "dyn-fixes"
+}

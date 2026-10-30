@@ -1,0 +1,35 @@
+{
+  "model": "gpt-5-nano",
+  "router_model": "gpt-5-mini",
+  "cases": 11,
+  "passed": 8,
+  "pass_rate": 0.727,
+  "runs": 33,
+  "runs_passed": 26,
+  "flaky": [
+    "docs-pending-onboarding"
+  ],
+  "by_category": {
+    "docs": "8/11"
+  },
+  "case_results": {
+    "docs-add-employee": false,
+    "docs-pending-onboarding": false,
+    "docs-emma-review": true,
+    "docs-add-vendor": true,
+    "docs-kyb": true,
+    "docs-ready-vs-transaction": true,
+    "docs-create-customer-invoice": true,
+    "docs-two-currencies": true,
+    "docs-i9-section2": true,
+    "docs-new-hire-not-payable": true,
+    "docs-onboarding-tab": false
+  },
+  "latency_median_s": 3.27,
+  "latency_p95_s": 4.95,
+  "llm_calls": 33,
+  "prompt_tokens": 33111,
+  "completion_tokens": 9424,
+  "est_cost_usd": 0.0054,
+  "label": "retr-current-5-3"
+}

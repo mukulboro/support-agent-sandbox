@@ -36,6 +36,15 @@ def test_name_filter_matches_first_or_last_name(dispatcher):
     assert run(dispatcher, "list_employees", name="Priya Raghunathan")["output"]["count"] == 1
 
 
+def test_counts_by_status_are_computed_in_code(dispatcher):
+    assert run(dispatcher, "list_employees")["output"]["count_by_status"] == {
+        "ONBOARDED": 16, "PENDING_ONBOARDING": 3, "DISMISSED": 2,
+    }
+    assert run(dispatcher, "list_vendor_invoices", vendor_name="Orrery")["output"]["count_by_status"] == {
+        "OVERDUE": 2, "PENDING_APPROVAL": 1, "PAID": 1,
+    }
+
+
 def test_overdue_bills(dispatcher):
     assert run(dispatcher, "list_vendor_invoices", status=["OVERDUE"])["output"]["count"] == 5
 

@@ -1,0 +1,42 @@
+{
+  "model": "gpt-5-nano",
+  "router_model": "gpt-5-mini",
+  "cases": 18,
+  "passed": 17,
+  "pass_rate": 0.944,
+  "runs": 54,
+  "runs_passed": 53,
+  "flaky": [
+    "route-payroll-why-is-data"
+  ],
+  "by_category": {
+    "routing": "17/18"
+  },
+  "case_results": {
+    "route-docs-howto": true,
+    "route-data-count": true,
+    "route-mixed": true,
+    "route-docs-borderline-approve-bill": true,
+    "route-payroll-why-is-data": false,
+    "route-unsupported-wallet": true,
+    "route-unsupported-timeoff": true,
+    "route-unsupported-refund": true,
+    "route-unsupported-change-data": true,
+    "route-escalate-human": true,
+    "route-end-thanks": true,
+    "route-unsupported-then-escalate": true,
+    "route-unsupported-then-end": true,
+    "route-rewrite-correction": true,
+    "route-rewrite-pronoun": true,
+    "route-docs-followup": true,
+    "route-no-context-pronoun": true,
+    "route-tool-failure": true
+  },
+  "latency_median_s": 4.26,
+  "latency_p95_s": 7.46,
+  "llm_calls": 143,
+  "prompt_tokens": 178591,
+  "completion_tokens": 15629,
+  "est_cost_usd": 0.0341,
+  "label": "routing-baseline"
+}

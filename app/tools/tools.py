@@ -81,6 +81,11 @@ class ToolDispatcher:
                 items = [item for item in items if filters[name](item, wanted)]
 
         output = {"count": len(items), "items": items}
+        if items and all("status" in item for item in items):
+            by_status: dict[str, int] = {}
+            for item in items:
+                by_status[item["status"]] = by_status.get(item["status"], 0) + 1
+            output["count_by_status"] = by_status
         if items and all("amount" in item for item in items):
             totals = {}
             for item in items:
