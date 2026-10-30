@@ -26,6 +26,9 @@ class Settings(BaseSettings):
     sections_to_return: int = 3
     max_section_chars: int = 3000
 
+    today: str = "2026-09-28"  # the dataset is built as though this is today; "overdue" depends on it
+    max_tool_rounds: int = 6  # the dynamic agent stops asking for tools after this many rounds
+
     llm_retries: int = 3
     llm_reasoning_first: str = "low"  # first attempt: light reasoning ("minimal" gave empty answers)
     llm_reasoning_retry: str = "medium"  # retries: reasoning on

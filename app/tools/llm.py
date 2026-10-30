@@ -33,6 +33,10 @@ class LLM:
         choice = {"type": "function", "function": {"name": tool["function"]["name"]}}
         return self._run(messages, self._read_tool_arguments, tools=[tool], tool_choice=choice)
 
+    def chat_with_tools(self, messages: list[dict], tools: list[dict]):
+        """Lets the model choose. Returns its message: .tool_calls to run, or the final text in .content."""
+        return self._run(messages, self._read_message, tools=tools, tool_choice="auto")
+
     def _run(self, messages: list[dict], read: Callable, **options):
         """First attempt has reasoning off (fast). If it fails or returns something unusable, retry with reasoning on."""
         for attempt in range(1, self.retries + 1):
@@ -52,6 +56,11 @@ class LLM:
         if not message.content:
             raise ValueError("empty reply")
         return message.content
+
+    def _read_message(self, message):
+        if not message.tool_calls and not message.content:
+            raise ValueError("empty reply")
+        return message
 
     def _read_tool_arguments(self, message) -> dict:
         if not message.tool_calls:

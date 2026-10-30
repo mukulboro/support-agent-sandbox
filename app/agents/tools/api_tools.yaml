@@ -1,0 +1,85 @@
+# The six mock-API tools, as the model sees them (name, description, parameters).
+# What each tool actually does lives in app/tools/tools.py, in the ToolDispatcher's match statement.
+
+- name: list_employees
+  description: >
+    List the employer's employees (summary fields only). All filters are optional and combine with AND.
+    The result includes a count, so never count the items yourself.
+  parameters:
+    type: object
+    properties:
+      status:
+        type: array
+        items: {type: string, enum: [ONBOARDED, PENDING_ONBOARDING, DISMISSED]}
+        description: Keep only employees with one of these statuses. Only ONBOARDED employees are payable.
+      employment_type:
+        type: string
+        enum: [EMPLOYEE, US_1099_CONTRACTOR]
+      department:
+        type: string
+        description: For example Engineering, Sales, Finance, Product, People, Support, Operations, Design, Marketing.
+      state:
+        type: string
+        description: Two-letter US state code of the work location, for example NY.
+      city:
+        type: string
+        description: Part of the work location city name.
+      name:
+        type: string
+        description: Part of the employee's first or last name.
+
+- name: get_employee
+  description: >
+    Get one employee in full: compensation, manager, payroll eligibility and the onboarding checklist
+    (pending steps say who they are blocked on). Needs an employee_id, so use list_employees first to find it from a name.
+  parameters:
+    type: object
+    properties:
+      employee_id: {type: string, description: "Looks like emp-12345"}
+    required: [employee_id]
+
+- name: list_vendors
+  description: List the vendors set up in Niural Pay. The optional name filter matches part of the vendor name.
+  parameters:
+    type: object
+    properties:
+      name: {type: string}
+
+- name: list_vendor_invoices
+  description: >
+    List bills owed to vendors (summary fields only). All filters are optional and combine with AND.
+    The result includes a count and total_by_currency computed in code, so never add amounts up yourself.
+    To find what is still owed, filter status to OVERDUE, PENDING_APPROVAL and SCHEDULED.
+  parameters:
+    type: object
+    properties:
+      status:
+        type: array
+        items: {type: string, enum: [PAID, OVERDUE, PENDING_APPROVAL, SCHEDULED]}
+        description: Keep only bills with one of these statuses.
+      vendor_name:
+        type: string
+        description: Part of the vendor name, for example Orrery.
+      invoice_number:
+        type: string
+        description: The INV-#### number people quote.
+
+- name: get_vendor_invoice
+  description: >
+    Get one bill in full: line items and the approval chain, including who it is waiting on (awaiting_approval_from).
+    Needs an invoice_id, so use list_vendor_invoices first to find it.
+  parameters:
+    type: object
+    properties:
+      invoice_id: {type: string, description: "Looks like vinv-2041"}
+    required: [invoice_id]
+
+- name: get_transaction
+  description: >
+    Get the status of one outbound payment: settled, pending or failed, with the failure reason when it failed.
+    The transaction_id comes from the user.
+  parameters:
+    type: object
+    properties:
+      transaction_id: {type: string, description: "Looks like txn-12345"}
+    required: [transaction_id]
