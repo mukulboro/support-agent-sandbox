@@ -1,3 +1,5 @@
+import json
+
 from openai import OpenAIError
 
 from app.agents.agents import RouterAgent
@@ -23,8 +25,9 @@ class ChatService:
     def begin(self) -> str:
         return self.convos.begin()
 
-    def send(self, convo_id: str, message: str) -> tuple[str, str]:
-        """Returns (reply for the client, status). Status is "active" unless the conversation was ended or escalated."""
+    def send(self, convo_id: str, message: str) -> dict:
+        """Returns what the client gets: the reply and status, plus the route, queries, sources and tool calls.
+        Status is "active" unless the conversation was ended or escalated."""
         history = self.convos.history(convo_id)  # raises KeyError for an unknown conversation
 
         plan = None
@@ -39,7 +42,22 @@ class ChatService:
         status = result.get("status", "active")
         if status != "active":
             self.end(convo_id, ended_by=status)
-        return reply, status
+        return {
+            "reply": reply,
+            "status": status,
+            "route": self.describe(plan),
+            "queries": plan["queries"] if plan else [],
+            "sources": result["sources"],
+            "tool_calls": [self.readable(call) for call in result.get("tool_calls", [])],
+        }
+
+    def readable(self, call: dict) -> dict:
+        """Tool arguments are stored as the JSON text the model wrote; the client gets them as an object."""
+        try:
+            arguments = json.loads(call["arguments"])
+        except ValueError:
+            arguments = None
+        return {**call, "arguments": arguments if isinstance(arguments, dict) else {"raw": call["arguments"]}}
 
     def carry_out(self, plan: dict, history: list[dict]) -> dict:
         if plan["action"] != "answer":  # unsupported, escalate or end: the router already wrote the reply

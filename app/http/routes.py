@@ -24,10 +24,9 @@ def begin_conversation(service: ChatService = Depends(get_service)) -> Conversat
 @router.post("/conversations/{convo_id}/messages", response_model=MessageResponse)
 def send_message(convo_id: str, body: MessageRequest, service: ChatService = Depends(get_service)) -> MessageResponse:
     try:
-        reply, status = service.send(convo_id, body.message)
+        return MessageResponse(**service.send(convo_id, body.message))
     except KeyError:
         raise HTTPException(status_code=404, detail="Unknown conversation")
-    return MessageResponse(reply=reply, status=status)
 
 
 @router.delete("/conversations/{convo_id}", status_code=204)

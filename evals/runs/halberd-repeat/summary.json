@@ -1,0 +1,19 @@
+{
+  "model": "gpt-5-nano",
+  "cases": 1,
+  "passed": 0,
+  "pass_rate": 0.0,
+  "by_category": {
+    "account": "0/1"
+  },
+  "case_results": {
+    "acct-halberd-unpaid": false
+  },
+  "latency_median_s": 6.345000000000001,
+  "latency_p95_s": 7.04,
+  "llm_calls": 16,
+  "prompt_tokens": 25260,
+  "completion_tokens": 2940,
+  "est_cost_usd": 0.0024,
+  "label": "halberd-repeat"
+}
