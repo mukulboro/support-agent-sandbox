@@ -1,6 +1,6 @@
 import pytest
 
-from api.mock_api import MockAPIError, mock_request
+from app.mock_api.mock_api import MockAPIError, mock_request
 
 
 @pytest.mark.parametrize("path,count", [("/employer/e1/employees", 21), ("/vendors", 8), ("/vendor-invoices", 25)])

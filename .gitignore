@@ -14,3 +14,7 @@ wheels/
 
 # Requirements/Context
 context/
+
+# Secrets / IDE
+.env
+.idea/

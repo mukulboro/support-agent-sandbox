@@ -1,0 +1,29 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.15.0
+    volumes:
+      - qdrant_data:/qdrant/storage
+    # the image has no curl/wget, so probe the port with bash
+    healthcheck:
+      test: ["CMD", "bash", "-c", ":> /dev/tcp/localhost/6333"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  app:
+    build: .
+    env_file: .env
+    environment:
+      QDRANT_URL: http://qdrant:6333
+      DB_PATH: /data/audit.db
+    ports:
+      - "9090:8000"
+    volumes:
+      - app_data:/data
+    depends_on:
+      qdrant:
+        condition: service_healthy
+
+volumes:
+  qdrant_data:
+  app_data:
