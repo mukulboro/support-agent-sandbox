@@ -22,8 +22,9 @@ class Settings(BaseSettings):
 
     guide_path: Path = ROOT / "docs" / "PRODUCT_GUIDE.md"
     chunk_size: int = 300
-    chunks_to_fetch: int = 5
-    sections_to_return: int = 3
+    # 12 and 6 beat 5 and 3 on the docs cases (29 of 33 runs against 26 of 33): the right section often ranks 6th to 9th
+    chunks_to_fetch: int = 12
+    sections_to_return: int = 6
     max_section_chars: int = 3000
 
     today: str = "2026-09-28"  # the dataset is built as though this is today; "overdue" depends on it

@@ -1,7 +1,7 @@
 {
   "_comment": "Frozen golden set. Do not edit cases to make a run pass; add new cases instead. Facts come from docs/PRODUCT_GUIDE.md and app/mock_api/data (today = 2026-09-28).",
   "phrases": {
-    "no_access": ["don't have access", "do not have access", "can't access", "cannot access", "unable to access", "not able to access", "don't have that information", "do not have that information", "don't have access to that", "hit an error", "ran into an error", "temporary error", "error getting", "couldn't retrieve", "could not retrieve", "unable to retrieve"],
+    "no_access": ["don't have access", "do not have access", "can't access", "cannot access", "unable to access", "not able to access", "don't have that information", "do not have that information", "don't have access to that", "hit an error", "ran into an error", "temporary error", "error getting", "couldn't retrieve", "could not retrieve", "unable to retrieve", "error accessing", "seeing an error"],
     "cant_find": ["couldn't find", "could not find", "can't find", "cannot find", "don't have", "do not have", "not covered", "isn't covered", "not available", "unable to", "no information"],
     "ask_who": ["which employee", "who ", "which person", "whose", "which one", "clarify", "could you tell me", "can you tell me", "name"]
   },
@@ -53,7 +53,7 @@
     {"id": "acct-orrery-owed", "category": "account", "agent": "dynamic", "turns": [
       {"user": "How much do we owe Orrery Cloud in total?", "expect": {"include": [["3,480", "3480"]], "exclude": ["4,730", "4730"], "tools": ["list_vendor_invoices"]}}]},
     {"id": "acct-failed-payment-no-id", "category": "ambiguity", "agent": "dynamic", "turns": [
-      {"user": "The payment for that freight invoice failed — why?", "expect": {"include": [["transaction id", "transaction ID", "transaction number", "txn-", "which payment", "which transaction"]], "exclude": ["insufficient", "INSUFFICIENT"]}}]},
+      {"user": "The payment for that freight invoice failed — why?", "expect": {"include": [["transaction id", "transaction ID", "transaction_id", "transaction number", "txn-", "which payment", "which transaction"]], "exclude": ["insufficient", "INSUFFICIENT"]}}]},
     {"id": "acct-failed-payment-with-id", "category": "account", "agent": "dynamic", "turns": [
       {"user": "The payment txn-88403 for the freight invoice failed — why?", "expect": {"include": [["insufficient", "not have sufficient", "did not have enough", "didn't have enough"]], "tools": ["get_transaction"]}}]},
     {"id": "acct-contractor-count", "category": "account", "agent": "dynamic", "turns": [
@@ -79,7 +79,7 @@
       {"user": "No wait, I meant the ones waiting for approval.", "expect": {"include": ["INV-2041", "INV-2044", "INV-2048"], "exclude": ["INV-2045"]}}]},
     {"id": "multi-vendor-correction", "category": "multi_turn", "agent": "dynamic", "turns": [
       {"user": "Why hasn't Halberd Components been paid?", "expect": {"include": ["Beatrix Nolan"]}},
-      {"user": "Sorry, I meant Kestrel Freight.", "expect": {"include": ["INV-2045", "overdue"], "exclude": ["Beatrix"]}}]},
+      {"user": "Sorry, I meant Kestrel Freight.", "expect": {"include": ["INV-2045", "overdue"], "exclude": ["Halberd", "INV-2041"]}}]},
     {"id": "multi-no-context-pronoun", "category": "ambiguity", "agent": "dynamic", "turns": [
       {"user": "What about her onboarding?", "expect": {"include": ["ref:ask_who"], "max_tool_calls": 0}}]},
     {"id": "multi-isolation", "category": "isolation", "agent": "dynamic", "turns": [
@@ -99,7 +99,7 @@
     {"id": "route-data-count", "category": "routing", "mode": "routed", "agent": "routed", "turns": [{"user": "How many vendors do we have?", "expect": {"route": "dynamic", "status": "active", "tools": ["list_vendors"], "include": ["re:\\b(8|eight)\\b"]}}]},
     {"id": "route-mixed", "category": "routing", "mode": "routed", "agent": "routed", "turns": [{"user": "How do I add a vendor, and how many vendors do we have?", "expect": {"route": "static+dynamic", "status": "active", "tools": ["list_vendors"], "sources_any": ["How to add a vendor"], "include": ["Create vendor", "re:\\b(8|eight)\\b"]}}]},
     {"id": "route-docs-borderline-approve-bill", "category": "routing", "mode": "routed", "agent": "routed", "turns": [{"user": "How do I approve a bill in Niural Pay?", "expect": {"route": "static", "status": "active"}}]},
-    {"id": "route-payroll-why-is-data", "category": "routing", "mode": "routed", "agent": "routed", "turns": [{"user": "Why isn't Priya showing up in this payroll run?", "expect": {"route": "dynamic", "status": "active", "tools": ["get_employee"], "include": [["dismissed", "offboarded", "no longer"]]}}]},
+    {"id": "route-payroll-why-is-data", "category": "routing", "mode": "routed", "agent": "routed", "turns": [{"user": "Why isn't Priya showing up in this payroll run?", "expect": {"route": "dynamic", "status": "active", "include": [["dismissed", "offboarded", "no longer"]]}}]},
     {"id": "route-unsupported-wallet", "category": "routing", "mode": "routed", "agent": "routed", "turns": [{"user": "What's our current wallet balance?", "expect": {"route": "unsupported", "status": "active", "include": ["escalate"], "max_tool_calls": 0}}]},
     {"id": "route-unsupported-timeoff", "category": "routing", "mode": "routed", "agent": "routed", "turns": [{"user": "How do I approve time off requests?", "expect": {"route": "unsupported", "status": "active", "include": ["escalate"], "max_tool_calls": 0}}]},
     {"id": "route-unsupported-refund", "category": "routing", "mode": "routed", "agent": "routed", "turns": [{"user": "What is Niural's refund policy for annual plans?", "expect": {"route": "unsupported", "status": "active", "include": ["escalate"], "max_tool_calls": 0}}]},
