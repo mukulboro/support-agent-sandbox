@@ -55,6 +55,12 @@ class ReviewRequest(BaseModel):
     note: str = ""
 
 
+class Timings(BaseModel):
+    router: int = 0  # milliseconds spent deciding where the message goes
+    agents: int = 0  # milliseconds spent in the agents (retrieval, tool calls and the answering LLM calls)
+    total: int = 0  # the whole turn, as seen by the server
+
+
 class MessageResponse(BaseModel):
     reply: str  # what to show the customer; includes the Sources list
     # "active": keep chatting. "ended" or "escalated": the conversation was closed, the client should stop
@@ -65,3 +71,4 @@ class MessageResponse(BaseModel):
     queries: list[RoutedQuery] = []
     sources: list[str] = []  # help-article sections or API calls the answer is based on
     tool_calls: list[ToolCall] = []
+    timings_ms: Timings = Timings()

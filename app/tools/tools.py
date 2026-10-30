@@ -10,7 +10,7 @@ class ToolDispatcher:
 
     def __init__(self, api: MockAPI, definitions: list[dict]):
         self.api = api
-        self.definitions = definitions  # from api_tools.yaml
+        self.definitions = definitions
 
     def schemas(self) -> list[dict]:
         """The tool definitions in the format OpenAI expects."""

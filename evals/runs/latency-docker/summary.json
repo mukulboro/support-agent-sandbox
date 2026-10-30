@@ -1,0 +1,638 @@
+{
+  "url": "http://localhost:9090",
+  "repeats": 8,
+  "scenarios": [
+    {
+      "scenario": "docs question",
+      "n": 8,
+      "errors": 0,
+      "median_s": 5.02,
+      "p95_s": 6.41,
+      "max_s": 6.41,
+      "router_median_ms": 1358,
+      "agents_median_ms": 3684,
+      "tool_calls_median": 0.0,
+      "routes_seen": [
+        "static"
+      ],
+      "samples": [
+        {
+          "seconds": 6.408688707990223,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1677,
+          "agents_ms": 4728,
+          "total_ms": 6405,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 6.329378082999028,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1380,
+          "agents_ms": 4946,
+          "total_ms": 6326,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 5.2119096249953145,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1214,
+          "agents_ms": 3994,
+          "total_ms": 5208,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 4.7057939160004025,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1336,
+          "agents_ms": 3366,
+          "total_ms": 4702,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 4.256413458002498,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1429,
+          "agents_ms": 2824,
+          "total_ms": 4253,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 5.142480333001004,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1260,
+          "agents_ms": 3879,
+          "total_ms": 5140,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 4.892943166996702,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1471,
+          "agents_ms": 3418,
+          "total_ms": 4890,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 4.613867249994655,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1122,
+          "agents_ms": 3488,
+          "total_ms": 4610,
+          "tool_calls": 0
+        }
+      ]
+    },
+    {
+      "scenario": "docs follow-up (2nd turn)",
+      "n": 8,
+      "errors": 0,
+      "median_s": 5.41,
+      "p95_s": 7.65,
+      "max_s": 7.65,
+      "router_median_ms": 1440,
+      "agents_median_ms": 4102,
+      "tool_calls_median": 0.0,
+      "routes_seen": [
+        "static"
+      ],
+      "samples": [
+        {
+          "seconds": 5.227910499990685,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1256,
+          "agents_ms": 3968,
+          "total_ms": 5224,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 5.216171916996245,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1445,
+          "agents_ms": 3767,
+          "total_ms": 5212,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 7.654172417009249,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1947,
+          "agents_ms": 5703,
+          "total_ms": 7650,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 5.676424582998152,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1435,
+          "agents_ms": 4237,
+          "total_ms": 5672,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 5.609221749997232,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1367,
+          "agents_ms": 4238,
+          "total_ms": 5605,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 5.019909542010282,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1532,
+          "agents_ms": 3484,
+          "total_ms": 5016,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 5.6019183339958545,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1288,
+          "agents_ms": 4310,
+          "total_ms": 5598,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 5.078812542007654,
+          "http_status": 200,
+          "route": "static",
+          "router_ms": 1454,
+          "agents_ms": 3620,
+          "total_ms": 5074,
+          "tool_calls": 0
+        }
+      ]
+    },
+    {
+      "scenario": "data, one tool call",
+      "n": 8,
+      "errors": 0,
+      "median_s": 4.01,
+      "p95_s": 4.68,
+      "max_s": 4.68,
+      "router_median_ms": 1202,
+      "agents_median_ms": 2703,
+      "tool_calls_median": 1.0,
+      "routes_seen": [
+        "dynamic"
+      ],
+      "samples": [
+        {
+          "seconds": 3.999694415993872,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1373,
+          "agents_ms": 2623,
+          "total_ms": 3996,
+          "tool_calls": 1
+        },
+        {
+          "seconds": 4.045288084002095,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1566,
+          "agents_ms": 2475,
+          "total_ms": 4042,
+          "tool_calls": 1
+        },
+        {
+          "seconds": 4.675012083011097,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1367,
+          "agents_ms": 3304,
+          "total_ms": 4671,
+          "tool_calls": 1
+        },
+        {
+          "seconds": 4.013681292010006,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1226,
+          "agents_ms": 2783,
+          "total_ms": 4009,
+          "tool_calls": 1
+        },
+        {
+          "seconds": 4.07422895799391,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1154,
+          "agents_ms": 2916,
+          "total_ms": 4070,
+          "tool_calls": 1
+        },
+        {
+          "seconds": 3.6222218749899184,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1179,
+          "agents_ms": 2439,
+          "total_ms": 3618,
+          "tool_calls": 1
+        },
+        {
+          "seconds": 3.1974925829999847,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1076,
+          "agents_ms": 2117,
+          "total_ms": 3193,
+          "tool_calls": 1
+        },
+        {
+          "seconds": 3.938823083008174,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1092,
+          "agents_ms": 2843,
+          "total_ms": 3935,
+          "tool_calls": 1
+        }
+      ]
+    },
+    {
+      "scenario": "data, two tool calls",
+      "n": 8,
+      "errors": 0,
+      "median_s": 9.49,
+      "p95_s": 9.83,
+      "max_s": 9.83,
+      "router_median_ms": 1484,
+      "agents_median_ms": 7718,
+      "tool_calls_median": 2.0,
+      "routes_seen": [
+        "dynamic"
+      ],
+      "samples": [
+        {
+          "seconds": 9.829297707998194,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 3504,
+          "agents_ms": 6321,
+          "total_ms": 9825,
+          "tool_calls": 2
+        },
+        {
+          "seconds": 7.424049124994781,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1368,
+          "agents_ms": 6052,
+          "total_ms": 7420,
+          "tool_calls": 2
+        },
+        {
+          "seconds": 9.43543666700134,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1378,
+          "agents_ms": 8053,
+          "total_ms": 9431,
+          "tool_calls": 2
+        },
+        {
+          "seconds": 9.215749625000171,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1452,
+          "agents_ms": 7760,
+          "total_ms": 9212,
+          "tool_calls": 2
+        },
+        {
+          "seconds": 9.670716583001195,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1517,
+          "agents_ms": 8150,
+          "total_ms": 9667,
+          "tool_calls": 2
+        },
+        {
+          "seconds": 9.552551041997503,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1872,
+          "agents_ms": 7676,
+          "total_ms": 9548,
+          "tool_calls": 2
+        },
+        {
+          "seconds": 9.316463916999055,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1663,
+          "agents_ms": 7649,
+          "total_ms": 9312,
+          "tool_calls": 3
+        },
+        {
+          "seconds": 9.809784249999211,
+          "http_status": 200,
+          "route": "dynamic",
+          "router_ms": 1428,
+          "agents_ms": 8378,
+          "total_ms": 9806,
+          "tool_calls": 2
+        }
+      ]
+    },
+    {
+      "scenario": "docs and data together",
+      "n": 8,
+      "errors": 0,
+      "median_s": 8.2,
+      "p95_s": 9.53,
+      "max_s": 9.53,
+      "router_median_ms": 1501,
+      "agents_median_ms": 6643,
+      "tool_calls_median": 1.0,
+      "routes_seen": [
+        "static+dynamic"
+      ],
+      "samples": [
+        {
+          "seconds": 8.922431667000637,
+          "http_status": 200,
+          "route": "static+dynamic",
+          "router_ms": 1414,
+          "agents_ms": 7504,
+          "total_ms": 8918,
+          "tool_calls": 1
+        },
+        {
+          "seconds": 9.530243542001699,
+          "http_status": 200,
+          "route": "static+dynamic",
+          "router_ms": 1589,
+          "agents_ms": 7937,
+          "total_ms": 9526,
+          "tool_calls": 1
+        },
+        {
+          "seconds": 8.11655299999984,
+          "http_status": 200,
+          "route": "static+dynamic",
+          "router_ms": 1378,
+          "agents_ms": 6735,
+          "total_ms": 8113,
+          "tool_calls": 1
+        },
+        {
+          "seconds": 6.444224499995471,
+          "http_status": 200,
+          "route": "static+dynamic",
+          "router_ms": 1239,
+          "agents_ms": 5200,
+          "total_ms": 6439,
+          "tool_calls": 1
+        },
+        {
+          "seconds": 8.651541833998635,
+          "http_status": 200,
+          "route": "static+dynamic",
+          "router_ms": 1494,
+          "agents_ms": 7153,
+          "total_ms": 8647,
+          "tool_calls": 1
+        },
+        {
+          "seconds": 7.791741167005966,
+          "http_status": 200,
+          "route": "static+dynamic",
+          "router_ms": 1749,
+          "agents_ms": 6039,
+          "total_ms": 7788,
+          "tool_calls": 1
+        },
+        {
+          "seconds": 8.291263457998866,
+          "http_status": 200,
+          "route": "static+dynamic",
+          "router_ms": 1737,
+          "agents_ms": 6551,
+          "total_ms": 8288,
+          "tool_calls": 1
+        },
+        {
+          "seconds": 7.371445292010321,
+          "http_status": 200,
+          "route": "static+dynamic",
+          "router_ms": 1508,
+          "agents_ms": 5859,
+          "total_ms": 7368,
+          "tool_calls": 1
+        }
+      ]
+    },
+    {
+      "scenario": "unsupported request",
+      "n": 8,
+      "errors": 0,
+      "median_s": 1.48,
+      "p95_s": 1.63,
+      "max_s": 1.63,
+      "router_median_ms": 1476,
+      "agents_median_ms": 0,
+      "tool_calls_median": 0.0,
+      "routes_seen": [
+        "unsupported"
+      ],
+      "samples": [
+        {
+          "seconds": 1.3517564999929164,
+          "http_status": 200,
+          "route": "unsupported",
+          "router_ms": 1348,
+          "agents_ms": 0,
+          "total_ms": 1348,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 1.5884293330018409,
+          "http_status": 200,
+          "route": "unsupported",
+          "router_ms": 1585,
+          "agents_ms": 0,
+          "total_ms": 1585,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 1.559171790999244,
+          "http_status": 200,
+          "route": "unsupported",
+          "router_ms": 1556,
+          "agents_ms": 0,
+          "total_ms": 1556,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 1.6348867079941556,
+          "http_status": 200,
+          "route": "unsupported",
+          "router_ms": 1631,
+          "agents_ms": 0,
+          "total_ms": 1631,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 1.42726420800318,
+          "http_status": 200,
+          "route": "unsupported",
+          "router_ms": 1424,
+          "agents_ms": 0,
+          "total_ms": 1424,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 1.2363325409969548,
+          "http_status": 200,
+          "route": "unsupported",
+          "router_ms": 1233,
+          "agents_ms": 0,
+          "total_ms": 1233,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 1.4221513329976005,
+          "http_status": 200,
+          "route": "unsupported",
+          "router_ms": 1419,
+          "agents_ms": 0,
+          "total_ms": 1419,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 1.5332129580056062,
+          "http_status": 200,
+          "route": "unsupported",
+          "router_ms": 1529,
+          "agents_ms": 0,
+          "total_ms": 1529,
+          "tool_calls": 0
+        }
+      ]
+    },
+    {
+      "scenario": "end of conversation",
+      "n": 8,
+      "errors": 0,
+      "median_s": 1.58,
+      "p95_s": 1.97,
+      "max_s": 1.97,
+      "router_median_ms": 1578,
+      "agents_median_ms": 0,
+      "tool_calls_median": 0.0,
+      "routes_seen": [
+        "end"
+      ],
+      "samples": [
+        {
+          "seconds": 1.635944459005259,
+          "http_status": 200,
+          "route": "end",
+          "router_ms": 1629,
+          "agents_ms": 0,
+          "total_ms": 1632,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 1.8992104170029052,
+          "http_status": 200,
+          "route": "end",
+          "router_ms": 1893,
+          "agents_ms": 0,
+          "total_ms": 1896,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 1.295882749996963,
+          "http_status": 200,
+          "route": "end",
+          "router_ms": 1289,
+          "agents_ms": 0,
+          "total_ms": 1292,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 1.9656510409986367,
+          "http_status": 200,
+          "route": "end",
+          "router_ms": 1959,
+          "agents_ms": 0,
+          "total_ms": 1962,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 1.2394425000093179,
+          "http_status": 200,
+          "route": "end",
+          "router_ms": 1232,
+          "agents_ms": 0,
+          "total_ms": 1235,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 1.467319540999597,
+          "http_status": 200,
+          "route": "end",
+          "router_ms": 1461,
+          "agents_ms": 0,
+          "total_ms": 1464,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 1.543835249991389,
+          "http_status": 200,
+          "route": "end",
+          "router_ms": 1538,
+          "agents_ms": 0,
+          "total_ms": 1541,
+          "tool_calls": 0
+        },
+        {
+          "seconds": 1.6252943750005215,
+          "http_status": 200,
+          "route": "end",
+          "router_ms": 1618,
+          "agents_ms": 0,
+          "total_ms": 1621,
+          "tool_calls": 0
+        }
+      ]
+    }
+  ],
+  "load": [
+    {
+      "parallel_conversations": 4,
+      "wall_s": 8.81,
+      "median_s": 8.78,
+      "max_s": 8.78,
+      "errors": 0
+    },
+    {
+      "parallel_conversations": 8,
+      "wall_s": 11.06,
+      "median_s": 8.96,
+      "max_s": 11.03,
+      "errors": 0
+    }
+  ]
+}

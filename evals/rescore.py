@@ -4,7 +4,6 @@
 """
 import argparse
 import json
-from pathlib import Path
 
 from evals.run import HERE, check, summarise
 

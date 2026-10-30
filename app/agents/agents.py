@@ -13,6 +13,8 @@ GIVE_UP = "I'm sorry, I couldn't finish looking that up. Could you narrow the qu
 
 RESULT_LIMIT = 2000  # characters of each tool result, and of each help section, kept in the trace for the auditor
 
+ACTIONS = ("answer", "unsupported", "escalate", "end")
+ROUTER_ATTEMPTS = 2  # ask again once if the router answers with something that is not an action
 AGENT_NAMES = ("static", "dynamic")
 MAX_QUERIES = 2  # one per agent is the most a single message needs
 DEFAULT_REPLIES = {
@@ -45,10 +47,16 @@ class RouterAgent:
     def route(self, message: str, history: list[dict]) -> dict:
         """Returns {"action": "answer" | "unsupported" | "escalate" | "end", "queries": [{"agent", "query"}], "reply": str}."""
         messages = [{"role": "system", "content": self.prompt}] + history + [{"role": "user", "content": message}]
-        plan = self.llm.call_tool(messages, self.tool)
-
-        action = plan.get("action")
-        if action not in ("answer", "unsupported", "escalate", "end"):
+        for _ in range(ROUTER_ATTEMPTS):
+            plan = self.llm.call_tool(messages, self.tool)
+            action = plan.get("action")
+            if action in AGENT_NAMES:
+                # seen in practice: the model writes the agent's name where the action goes. It meant "answer".
+                plan = {**plan, "action": "answer", "queries": plan.get("queries") or [{"agent": action, "query": message}]}
+                action = "answer"
+            if action in ACTIONS:
+                break
+        else:
             raise ValueError(f"router returned an unknown action: {action!r}")
 
         # the model does not always fill every field, so read the optional ones defensively
@@ -79,7 +87,10 @@ class StaticAgent:
         messages.append({"role": "user", "content": query})
 
         result = self.llm.call_tool(messages, self.tool)
-        used = [n for n in result["sources"] if 1 <= n <= len(sections)]  # ignore numbers the LLM made up
+        if not result.get("answer"):  # the tool schema says required, but the model does not always obey
+            raise ValueError("the model called answer_question without an answer")
+        numbers = result.get("sources") or []
+        used = [n for n in numbers if isinstance(n, int) and 1 <= n <= len(sections)]  # ignore numbers the LLM made up
         return {
             "answer": result["answer"],
             "sources": [sections[n - 1]["title"] for n in dict.fromkeys(used)],

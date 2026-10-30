@@ -35,6 +35,9 @@ def show_trace(question: str, data: dict) -> None:
         print(f"      -> {call['endpoint'] or 'rejected before calling the API'}  [{outcome}]")
     if not data["tool_calls"]:
         print("  tool calls: none")
+    t = data.get("timings_ms") or {}
+    print(f"  time: {t.get('total', 0) / 1000:.1f}s (router {t.get('router', 0) / 1000:.1f}s, "
+          f"agents {t.get('agents', 0) / 1000:.1f}s)")
     print(RESET, end="")
 
 

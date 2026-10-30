@@ -7,7 +7,7 @@ from app.http.models import (
     MessageResponse,
     ReviewRequest,
 )
-from app.http.services import ChatService
+from app.http.services import ChatService, UnknownConversation
 from app.repository.db import AuditStore
 
 router = APIRouter()
@@ -37,7 +37,7 @@ def begin_conversation(service: ChatService = Depends(get_service)) -> Conversat
 def send_message(convo_id: str, body: MessageRequest, service: ChatService = Depends(get_service)) -> MessageResponse:
     try:
         return MessageResponse(**service.send(convo_id, body.message))
-    except KeyError:
+    except UnknownConversation:
         raise HTTPException(status_code=404, detail="Unknown conversation")
 
 

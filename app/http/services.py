@@ -1,7 +1,6 @@
 import json
 import threading
-
-from openai import OpenAIError
+import time
 
 from app.agents.agents import AuditorAgent, RouterAgent
 from app.repository.db import AuditStore
@@ -11,6 +10,14 @@ from app.tools.logger import get_logger
 log = get_logger(__name__)
 
 APOLOGY = "I'm sorry, I ran into a problem while working on that. Could you try asking again in a moment?"
+
+
+class UnknownConversation(KeyError):
+    """The conversation id was never created, or the conversation already ended or was escalated."""
+
+
+def elapsed_ms(since: float) -> int:
+    return round((time.perf_counter() - since) * 1000)
 
 # what the conversation's status becomes after each router action; unsupported keeps it open for the customer's choice
 STATUS_AFTER = {"answer": "active", "unsupported": "active", "escalate": "escalated", "end": "ended"}
@@ -39,27 +46,36 @@ class ChatService:
     def send(self, convo_id: str, message: str) -> dict:
         """Returns what the client gets: the reply and status, plus the route, queries, sources and tool calls.
         Status is "active" unless the conversation was ended or escalated."""
-        history = self.convos.history(convo_id)  # raises KeyError for an unknown conversation
+        try:
+            history = self.convos.history(convo_id)
+        except KeyError:
+            raise UnknownConversation(convo_id)
 
+        started = time.perf_counter()
+        router_ms = agents_ms = 0
         plan = None
         try:
             plan = self.router.route(message, history)
+            router_ms = elapsed_ms(started)
             result = self.carry_out(plan, history)
-        except (OpenAIError, ValueError) as error:  # the LLM already retried, so apologise and keep the conversation open
-            log.error("turn failed in conversation %s: %s", convo_id, error)
-            result = {"answer": APOLOGY, "sources": [], "error": str(error)}
+            agents_ms = elapsed_ms(started) - router_ms
+        except Exception as error:  # LLM failures (already retried) and malformed model output: apologise, stay open
+            log.exception("turn failed in conversation %s", convo_id)  # keeps the traceback so a real bug is not hidden
+            result = {"answer": APOLOGY, "sources": [], "error": f"{type(error).__name__}: {error}"}
 
-        reply = self.convos.add_turn(convo_id, message, self.describe(plan), result)
+        route = "error" if "error" in result else self.describe(plan)  # a failed turn is "error" whoever failed
+        reply = self.convos.add_turn(convo_id, message, route, result)
         status = result.get("status", "active")
         if status != "active":
             self.end(convo_id, ended_by=status)
         return {
             "reply": reply,
             "status": status,
-            "route": self.describe(plan),
+            "route": route,
             "queries": plan["queries"] if plan else [],
             "sources": result["sources"],
             "tool_calls": [self.readable(call) for call in result.get("tool_calls", [])],
+            "timings_ms": {"router": router_ms, "agents": agents_ms, "total": elapsed_ms(started)},
         }
 
     def readable(self, call: dict) -> dict:
@@ -104,7 +120,7 @@ class ChatService:
         """Hands a finished conversation to the auditor in the background, so ending it returns straight away."""
         log.info("conversation %s ended by %s after %d turns", record["id"], record["ended_by"], len(record["traces"]))
         if self.auditor is None or self.audits is None or not record["traces"]:
-            return  # nothing to audit
+            return
         threading.Thread(target=self.run_audit, args=(record,), daemon=True).start()
 
     def run_audit(self, record: dict) -> None:
