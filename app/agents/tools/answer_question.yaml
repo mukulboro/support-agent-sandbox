@@ -1,0 +1,14 @@
+name: answer_question
+description: Send the final answer to the customer, together with the numbers of the help-article sections the answer is based on.
+parameters:
+  type: object
+  properties:
+    answer:
+      type: string
+      description: The reply to the customer.
+    sources:
+      type: array
+      items:
+        type: integer
+      description: Numbers of the sections you actually used to write the answer. Empty if the sections did not contain the answer.
+  required: [answer, sources]

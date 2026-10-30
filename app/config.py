@@ -12,6 +12,7 @@ class Settings(BaseSettings):
 
     openai_api_key: str
 
+    llm_model: str = "gpt-5-nano"  # cheapest OpenAI model for now; swap for something stronger later
     embed_model: str = "text-embedding-3-small"
     embed_dimension: int = 1536
 
@@ -26,6 +27,8 @@ class Settings(BaseSettings):
     max_section_chars: int = 3000
 
     llm_retries: int = 3
+    llm_reasoning_first: str = "low"  # first attempt: light reasoning ("minimal" gave empty answers)
+    llm_reasoning_retry: str = "medium"  # retries: reasoning on
 
 
 @lru_cache
