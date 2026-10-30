@@ -23,6 +23,38 @@ class ToolCall(BaseModel):
     ok: bool
 
 
+class AuditIssue(BaseModel):
+    turn: int
+    problem: str
+
+
+class AuditSummary(BaseModel):
+    """The auditor's verdict on one finished conversation, and the human reviewer's decision on it."""
+
+    id: int
+    created_at: str
+    conversation_id: str
+    ended_by: str  # "client", "ended" or "escalated"
+    title: str  # the customer's first question
+    score: int  # 1 to 5
+    ended_well: bool
+    outcome: str
+    reasons: str
+    issues: list[AuditIssue]
+    suggestions: list[str]
+    review: str  # "pending", "approved" or "rejected"
+    review_note: str
+
+
+class AuditDetail(AuditSummary):
+    record: dict  # the full conversation: messages and traces
+
+
+class ReviewRequest(BaseModel):
+    decision: Literal["approved", "rejected"]
+    note: str = ""
+
+
 class MessageResponse(BaseModel):
     reply: str  # what to show the customer; includes the Sources list
     # "active": keep chatting. "ended" or "escalated": the conversation was closed, the client should stop

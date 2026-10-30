@@ -2,13 +2,14 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from app.agents.agents import DynamicAgent, RouterAgent, StaticAgent, load_api_tools
+from app.agents.agents import AuditorAgent, DynamicAgent, RouterAgent, StaticAgent, load_api_tools
 from app.config import get_settings
 from app.http.routes import router
 from app.http.services import ChatService
 from app.mock_api.mock_api import mock_request
 from app.rag.ingestor import StaticKnowledgeIngester
 from app.rag.retriever import Retriever
+from app.repository.db import AuditStore
 from app.repository.vector import VectorStore
 from app.tools.convo_manager import ConversationManager
 from app.tools.embed import Embedder
@@ -53,7 +54,18 @@ async def lifespan(app: FastAPI):
         settings.router_reasoning_first,
         settings.router_reasoning_retry,
     )
-    app.state.service = ChatService(RouterAgent(router_llm), agents, ConversationManager())
+    auditor_llm = LLM(
+        settings.openai_api_key,
+        settings.auditor_model,
+        settings.llm_retries,
+        settings.auditor_reasoning_first,
+        settings.auditor_reasoning_retry,
+    )
+    audits = AuditStore(settings.db_path)
+    app.state.audits = audits
+    app.state.service = ChatService(
+        RouterAgent(router_llm), agents, ConversationManager(), AuditorAgent(auditor_llm), audits
+    )
 
     log.info("server ready")
     yield

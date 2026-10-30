@@ -36,6 +36,11 @@ class Settings(BaseSettings):
     router_reasoning_first: str = "minimal"
     router_reasoning_retry: str = "low"
 
+    # the auditor judges whole conversations after they end, so it can afford a stronger model and more thought
+    auditor_model: str = "gpt-5-mini"
+    auditor_reasoning_first: str = "low"
+    auditor_reasoning_retry: str = "medium"
+
     llm_reasoning_first: str = "low"  # first attempt: light reasoning ("minimal" gave empty answers)
     llm_reasoning_retry: str = "medium"  # retries: reasoning on
 

@@ -1,0 +1,34 @@
+name: submit_audit
+description: Record the audit of one finished support conversation. Call this exactly once.
+parameters:
+  type: object
+  properties:
+    score:
+      type: integer
+      description: Overall quality from 1 (bad) to 5 (excellent), judged on accuracy, grounding in the sources and tool results, routing, helpfulness and handling of errors.
+    ended_well:
+      type: boolean
+      description: >
+        True if the conversation ended on a good note: the customer got what they needed, or was correctly told this system
+        cannot help and handed off. False if it ended with an unanswered question, a wrong answer, an unnecessary escalation
+        or the customer giving up.
+    outcome:
+      type: string
+      enum: [resolved, partially_resolved, unresolved, correctly_declined, correctly_escalated, unnecessary_escalation, abandoned]
+    reasons:
+      type: string
+      description: Two to four sentences explaining the score and the outcome.
+    issues:
+      type: array
+      description: Specific problems, each tied to a turn number. Empty if there were none.
+      items:
+        type: object
+        properties:
+          turn: {type: integer}
+          problem: {type: string}
+        required: [turn, problem]
+    suggestions:
+      type: array
+      description: Concrete changes to prompts, tools or routing that would have avoided the issues. Empty if there is nothing to change.
+      items: {type: string}
+  required: [score, ended_well, outcome, reasons, issues, suggestions]

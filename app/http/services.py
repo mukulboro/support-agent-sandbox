@@ -1,8 +1,10 @@
 import json
+import threading
 
 from openai import OpenAIError
 
-from app.agents.agents import RouterAgent
+from app.agents.agents import AuditorAgent, RouterAgent
+from app.repository.db import AuditStore
 from app.tools.convo_manager import ConversationManager
 from app.tools.logger import get_logger
 
@@ -17,10 +19,19 @@ STATUS_AFTER = {"answer": "active", "unsupported": "active", "escalate": "escala
 class ChatService:
     """One chat turn: look up history, let the router decide, run the agents, store the turn, return the client text."""
 
-    def __init__(self, router: RouterAgent, agents: dict, convos: ConversationManager):
+    def __init__(
+        self,
+        router: RouterAgent,
+        agents: dict,
+        convos: ConversationManager,
+        auditor: AuditorAgent | None = None,
+        audits: AuditStore | None = None,
+    ):
         self.router = router
         self.agents = agents  # {"static": StaticAgent, "dynamic": DynamicAgent}
         self.convos = convos
+        self.auditor = auditor
+        self.audits = audits
 
     def begin(self) -> str:
         return self.convos.begin()
@@ -68,6 +79,7 @@ class ChatService:
             "answer": "\n\n".join(r["answer"] for r in results),
             "sources": list(dict.fromkeys(s for r in results for s in r["sources"])),
             "tool_calls": [call for r in results for call in r.get("tool_calls", [])],
+            "retrieved": [section for r in results for section in r.get("retrieved", [])],
             "plan": plan,
         }
 
@@ -89,5 +101,17 @@ class ChatService:
         self.audit(record)
 
     def audit(self, record: dict) -> None:
-        # the auditor agent will score the conversation here, including whether it ended on a good note
+        """Hands a finished conversation to the auditor in the background, so ending it returns straight away."""
         log.info("conversation %s ended by %s after %d turns", record["id"], record["ended_by"], len(record["traces"]))
+        if self.auditor is None or self.audits is None or not record["traces"]:
+            return  # nothing to audit
+        threading.Thread(target=self.run_audit, args=(record,), daemon=True).start()
+
+    def run_audit(self, record: dict) -> None:
+        try:
+            audit = self.auditor.audit(record)
+            audit_id = self.audits.save(audit, record)
+            log.info("audit %d saved for conversation %s: score %d, ended_well=%s, outcome=%s",
+                     audit_id, record["id"], audit["score"], audit["ended_well"], audit["outcome"])
+        except Exception:  # an audit must never take the server down
+            log.exception("audit failed for conversation %s", record["id"])

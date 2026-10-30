@@ -18,3 +18,6 @@ context/
 # Secrets / IDE
 .env
 .idea/
+
+# Local audit database
+audit.db
