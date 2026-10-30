@@ -1,0 +1,98 @@
+{
+  "_comment": "Frozen golden set. Do not edit cases to make a run pass; add new cases instead. Facts come from docs/PRODUCT_GUIDE.md and app/mock_api/data (today = 2026-09-28).",
+  "phrases": {
+    "no_access": ["don't have access", "do not have access", "can't access", "cannot access", "unable to access", "not able to access", "don't have that information", "do not have that information", "don't have access to that"],
+    "cant_find": ["couldn't find", "could not find", "can't find", "cannot find", "don't have", "do not have", "not covered", "isn't covered", "not available", "unable to", "no information"],
+    "ask_who": ["which employee", "who ", "which person", "whose", "which one", "clarify", "could you tell me", "can you tell me", "name"]
+  },
+  "cases": [
+    {"id": "docs-add-employee", "category": "docs", "agent": "static", "turns": [
+      {"user": "How do I add a new employee?", "expect": {"include": [["Hire", "Add employee"], ["Employee details", "four-step", "4-step", "wizard"]], "sources_any": ["How to hire an employee"]}}]},
+    {"id": "docs-pending-onboarding", "category": "docs", "agent": "static", "turns": [
+      {"user": "What does 'Pending onboarding' mean?", "expect": {"include": [["not payable", "not yet payable", "cannot be paid", "can't be paid", "isn't payable", "aren't payable", "not able to be paid"]], "sources_any": ["The employee list", "Onboarding and Form I-9", "How to hire an employee"]}}]},
+    {"id": "docs-approve-bill", "category": "docs_gap", "agent": "static", "turns": [
+      {"user": "How do I approve a bill in Niural Pay?", "expect": {"include": ["Needs approval"], "sources_any": ["Bills"]}}]},
+    {"id": "docs-emma-review", "category": "docs", "agent": "static", "turns": [
+      {"user": "What is Emma's review on a bill?", "expect": {"include": ["contract", ["Flagged", "Cleared"]], "sources_any": ["Emma's review", "Bills"]}}]},
+    {"id": "docs-add-vendor", "category": "docs", "agent": "static", "turns": [
+      {"user": "How do I add a vendor?", "expect": {"include": ["Vendors", ["Add vendor"], "Create vendor"], "sources_any": ["How to add a vendor"]}}]},
+    {"id": "docs-kyb", "category": "docs", "agent": "static", "turns": [
+      {"user": "What does KYB status mean for a vendor?", "expect": {"include": [["Know-Your-Business", "Know Your Business"], "Verified"], "sources_any": ["Vendors"]}}]},
+    {"id": "docs-ready-vs-transaction", "category": "docs", "agent": "static", "turns": [
+      {"user": "A bill says Ready for payment but I can't find a transaction for it. Why?", "expect": {"include": ["transaction"], "sources_any": ["Transactions"]}}]},
+    {"id": "docs-create-customer-invoice", "category": "docs", "agent": "static", "turns": [
+      {"user": "How do I create an invoice for a customer?", "expect": {"include": ["Create invoice", ["Email not sent", "send"]], "sources_any": ["How to create a customer invoice"]}}]},
+    {"id": "docs-two-currencies", "category": "docs", "agent": "static", "turns": [
+      {"user": "Why does a bill show two currencies?", "expect": {"include": ["preferred currency", ["settled", "settle"]], "sources_any": ["Bills"]}}]},
+    {"id": "docs-i9-section2", "category": "docs", "agent": "static", "turns": [
+      {"user": "Who is responsible for I-9 Section 2 and when is it due?", "expect": {"include": ["employer", ["3 business days", "three business days"]], "sources_any": ["Onboarding and Form I-9"]}}]},
+    {"id": "docs-new-hire-not-payable", "category": "docs", "agent": "static", "turns": [
+      {"user": "Why can't I pay an employee who just joined?", "expect": {"include": ["Onboarding", ["I-9", "every step", "all steps"]], "sources_any": ["Onboarding and Form I-9", "The employee list", "How to hire an employee"]}}]},
+    {"id": "docs-onboarding-tab", "category": "docs", "agent": "static", "turns": [
+      {"user": "What does the Onboarding tab mean?", "expect": {"include": [["not payable", "not yet payable", "isn't payable", "aren't payable", "cannot be paid"]], "exclude": ["isn't a tab", "is not a tab", "not a tab"], "sources_any": ["The employee list"]}}]},
+
+    {"id": "oos-refund-policy", "category": "out_of_scope", "agent": "static", "turns": [
+      {"user": "What is Niural's refund policy for annual plans?", "expect": {"include": ["ref:cant_find"], "no_sources": true}}]},
+    {"id": "oos-time-off", "category": "out_of_scope", "agent": "static", "turns": [
+      {"user": "How do I approve time off requests?", "expect": {"include": ["ref:cant_find"]}}]},
+    {"id": "oos-wallet-balance", "category": "out_of_scope", "agent": "dynamic", "turns": [
+      {"user": "What's our current wallet balance?", "expect": {"include": ["ref:cant_find"], "max_tool_calls": 0}}]},
+
+    {"id": "acct-active-count", "category": "account", "agent": "dynamic", "turns": [
+      {"user": "How many active employees do we have?", "expect": {"include": ["re:\\b16\\b"], "tools": ["list_employees"]}}]},
+    {"id": "acct-new-york", "category": "account", "agent": "dynamic", "turns": [
+      {"user": "Which of our employees are based in New York?", "expect": {"include": ["Marisol", "Rosalind", "Desmond", "Saoirse", "Beatrix", "Chiara"], "tools": ["list_employees"]}}]},
+    {"id": "acct-marisol-onboarding", "category": "account", "agent": "dynamic", "turns": [
+      {"user": "Is Marisol Okonjo's onboarding finished, or is something outstanding?", "expect": {"include": ["I-9", "employer"], "tools": ["get_employee"], "sources_any": ["/employee/"]}}]},
+    {"id": "acct-priya-payroll", "category": "account", "agent": "dynamic", "turns": [
+      {"user": "Why isn't Priya showing up in this payroll run?", "expect": {"include": [["dismissed", "offboarded", "no longer"]], "tools": ["get_employee"]}}]},
+    {"id": "acct-halberd-unpaid", "category": "account", "agent": "dynamic", "turns": [
+      {"user": "Why hasn't Halberd Components been paid yet?", "expect": {"include": ["Beatrix Nolan", ["approval", "approve"]], "tools": ["get_vendor_invoice"], "sources_any": ["/vendor-invoices/"]}}]},
+    {"id": "acct-overdue-bills", "category": "account", "agent": "dynamic", "turns": [
+      {"user": "Which bills are overdue right now?", "expect": {"include": ["INV-2042", "INV-2043", "INV-2045", "INV-2055", "INV-2059"], "exclude": ["INV-2041", "INV-2044", "INV-2048"], "tools": ["list_vendor_invoices"]}}]},
+    {"id": "acct-orrery-owed", "category": "account", "agent": "dynamic", "turns": [
+      {"user": "How much do we owe Orrery Cloud in total?", "expect": {"include": [["3,480", "3480"]], "exclude": ["4,730", "4730"], "tools": ["list_vendor_invoices"]}}]},
+    {"id": "acct-failed-payment-no-id", "category": "ambiguity", "agent": "dynamic", "turns": [
+      {"user": "The payment for that freight invoice failed — why?", "expect": {"include": [["transaction id", "transaction ID", "transaction number", "txn-", "which payment", "which transaction"]], "exclude": ["insufficient", "INSUFFICIENT"]}}]},
+    {"id": "acct-failed-payment-with-id", "category": "account", "agent": "dynamic", "turns": [
+      {"user": "The payment txn-88403 for the freight invoice failed — why?", "expect": {"include": [["insufficient", "not have sufficient", "did not have enough", "didn't have enough"]], "tools": ["get_transaction"]}}]},
+    {"id": "acct-contractor-count", "category": "account", "agent": "dynamic", "turns": [
+      {"user": "How many contractors do we have?", "expect": {"include": ["re:\\b(2|two)\\b"], "tools": ["list_employees"]}}]},
+    {"id": "acct-pending-approval", "category": "account", "agent": "dynamic", "turns": [
+      {"user": "Which bills are waiting for approval?", "expect": {"include": ["INV-2041", "INV-2044", "INV-2048"], "tools": ["list_vendor_invoices"]}}]},
+    {"id": "acct-vendor-count", "category": "account", "agent": "dynamic", "turns": [
+      {"user": "How many vendors do we have?", "expect": {"include": ["re:\\b(8|eight)\\b"], "tools": ["list_vendors"]}}]},
+    {"id": "acct-headcount-ambiguous", "category": "ambiguity", "agent": "dynamic", "turns": [
+      {"user": "How many employees do we have?", "expect": {"include": ["re:\\b16\\b"], "tools": ["list_employees"]}}]},
+
+    {"id": "multi-count-correction", "category": "multi_turn", "agent": "dynamic", "turns": [
+      {"user": "How many active employees do we have?", "expect": {"include": ["re:\\b16\\b"]}},
+      {"user": "Sorry, I meant contractors, how many are there?", "expect": {"include": ["re:\\b(2|two)\\b"]}}]},
+    {"id": "multi-person-followup", "category": "multi_turn", "agent": "dynamic", "turns": [
+      {"user": "Is Marisol Okonjo's onboarding finished?", "expect": {"include": ["I-9"]}},
+      {"user": "And what about Tobias?", "expect": {"include": ["Tobias", "I-9"], "tools": ["get_employee"]}}]},
+    {"id": "multi-docs-followup", "category": "multi_turn", "agent": "static", "turns": [
+      {"user": "How do I add a vendor?", "expect": {"include": ["Create vendor"]}},
+      {"user": "and for a bill instead?", "expect": {"include": ["Add bill", ["Review details", "Pay invoice"]]}}]},
+    {"id": "multi-overdue-to-pending", "category": "multi_turn", "agent": "dynamic", "turns": [
+      {"user": "Which bills are overdue?", "expect": {"include": ["INV-2042", "INV-2045"]}},
+      {"user": "No wait, I meant the ones waiting for approval.", "expect": {"include": ["INV-2041", "INV-2044", "INV-2048"], "exclude": ["INV-2045"]}}]},
+    {"id": "multi-vendor-correction", "category": "multi_turn", "agent": "dynamic", "turns": [
+      {"user": "Why hasn't Halberd Components been paid?", "expect": {"include": ["Beatrix Nolan"]}},
+      {"user": "Sorry, I meant Kestrel Freight.", "expect": {"include": ["INV-2045", "overdue"], "exclude": ["Beatrix"]}}]},
+    {"id": "multi-no-context-pronoun", "category": "ambiguity", "agent": "dynamic", "turns": [
+      {"user": "What about her onboarding?", "expect": {"include": ["ref:ask_who"], "max_tool_calls": 0}}]},
+    {"id": "multi-isolation", "category": "isolation", "agent": "dynamic", "turns": [
+      {"convo": "a", "user": "Is Marisol Okonjo's onboarding finished?", "expect": {"include": ["I-9"]}},
+      {"convo": "b", "user": "And what about her manager?", "expect": {"include": ["ref:ask_who"], "exclude": ["Marisol"]}}]},
+
+    {"id": "fail-invoices-500", "category": "tool_failure", "agent": "dynamic", "inject": {"/vendor-invoices": 500}, "turns": [
+      {"user": "Which bills are overdue right now?", "expect": {"include": ["ref:no_access", "escalate"], "exclude": ["re:INV-\\d+"], "no_sources": true}}]},
+    {"id": "fail-employees-404", "category": "tool_failure", "agent": "dynamic", "inject": {"/employer/current/employees": 404}, "turns": [
+      {"user": "How many active employees do we have?", "expect": {"include": ["ref:no_access", "escalate"], "exclude": ["re:\\b16\\b"], "no_sources": true}}]},
+    {"id": "fail-employee-detail-500", "category": "tool_failure", "agent": "dynamic", "inject": {"/employer/current/employee/": 500}, "turns": [
+      {"user": "Is Marisol Okonjo's onboarding finished, or is something outstanding?", "expect": {"include": ["ref:no_access"], "exclude": ["Section 2"]}}]},
+    {"id": "fail-unknown-transaction", "category": "tool_failure", "agent": "dynamic", "turns": [
+      {"user": "What's the status of payment txn-99999?", "expect": {"include": ["ref:cant_find"], "exclude": ["settled", "SETTLED", "failed", "FAILED"]}}]}
+  ]
+}

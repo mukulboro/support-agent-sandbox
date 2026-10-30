@@ -23,6 +23,7 @@ class LLM:
         self.retries = retries
         self.reasoning_first = reasoning_first
         self.reasoning_retry = reasoning_retry
+        self.usage = {"calls": 0, "prompt_tokens": 0, "completion_tokens": 0}  # running totals, read by the evals
 
     def chat(self, messages: list[dict]) -> str:
         """Returns the reply text."""
@@ -45,6 +46,9 @@ class LLM:
                 response = self.client.chat.completions.create(
                     model=self.model, messages=messages, reasoning_effort=reasoning, **options
                 )
+                self.usage["calls"] += 1
+                self.usage["prompt_tokens"] += response.usage.prompt_tokens
+                self.usage["completion_tokens"] += response.usage.completion_tokens
                 return read(response.choices[0].message)
             except (OpenAIError, ValueError) as error:  # ValueError covers empty replies and bad tool arguments
                 log.warning("llm call failed (attempt %d/%d, reasoning=%s): %s", attempt, self.retries, reasoning, error)
